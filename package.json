@@ -1,6 +1,6 @@
 {
   "name": "ai-work-system",
-  "version": "0.3.1",
+  "version": "0.3.2",
   "description": "Personal AI work system: file-backed context, search plugins, skills and reusable host integrations.",
   "type": "module",
   "license": "MIT",

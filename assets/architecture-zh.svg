@@ -1,22 +1,22 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="560" viewBox="0 0 1100 560" role="img" aria-labelledby="title desc">
-<title id="title">工作怎样持续衔接</title><desc id="desc">AI负责判断，程序负责存取，文件保留可接手的依据。</desc>
-<defs><marker id="work" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0L8 4L0 8" style="fill:#71dbc3"/></marker><marker id="data" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0L8 4L0 8" style="fill:#7dadff"/></marker><marker id="feedback" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0L8 4L0 8" style="fill:#e3bc76"/></marker></defs>
-<style>text{font-family:Arial,'Microsoft YaHei',sans-serif}.node{fill:#f3f7ff;font-size:21px;font-weight:600}.sub{fill:#adc0d8;font-size:15px}.label{fill:#b6cae3;font-size:15px}path{fill:none;stroke-width:2}</style>
-<rect width="1100" height="560" rx="12" fill="#0c1726"/>
-<text x="40" y="53" fill="#f3f7ff" font-size="28" font-weight="600">工作怎样持续衔接</text><text x="40" y="85" class="label">AI负责判断，程序负责存取，文件保留可接手的依据。</text>
-<rect x="40" y="130" width="175" height="90" rx="5" fill="#142235" stroke="#435b76"/><text x="127.5" y="165" text-anchor="middle" class="node">用户意思</text><text x="127.5" y="195" text-anchor="middle" class="sub">目标与补充</text>
-<rect x="245" y="130" width="175" height="90" rx="5" fill="#142235" stroke="#435b76"/><text x="332.5" y="165" text-anchor="middle" class="node">当前任务</text><text x="332.5" y="195" text-anchor="middle" class="sub">条件与进度</text>
-<rect x="450" y="130" width="175" height="90" rx="5" fill="#142235" stroke="#435b76"/><text x="537.5" y="165" text-anchor="middle" class="node">资料研究</text><text x="537.5" y="195" text-anchor="middle" class="sub">来源与原文</text>
-<rect x="655" y="130" width="175" height="90" rx="5" fill="#142235" stroke="#435b76"/><text x="742.5" y="165" text-anchor="middle" class="node">实际执行</text><text x="742.5" y="195" text-anchor="middle" class="sub">工具与执行者</text>
-<rect x="860" y="130" width="175" height="90" rx="5" fill="#142235" stroke="#435b76"/><text x="947.5" y="165" text-anchor="middle" class="node">交付成果</text><text x="947.5" y="195" text-anchor="middle" class="sub">产物与接续</text><path d="M215 175H241" stroke="#71dbc3" marker-end="url(#work)"/>
-<path d="M420 175H446" stroke="#71dbc3" marker-end="url(#work)"/>
-<path d="M625 175H651" stroke="#71dbc3" marker-end="url(#work)"/>
-<path d="M830 175H856" stroke="#71dbc3" marker-end="url(#work)"/>
-<path d="M947 220V276H332V220" stroke="#e3bc76" marker-end="url(#feedback)"/><text x="557" y="265" style="fill:#e3bc76" font-size="15">使用反馈与纠正</text>
-<rect x="244" y="425" width="790" height="84" rx="5" fill="#12243a" stroke="#4e75a5"/><text x="639" y="474" text-anchor="middle" fill="#d1e4ff" font-size="20">项目 · 知识 · 经验 · 对象 · 资源</text>
-<path d="M292 425V220" stroke="#7dadff" marker-end="url(#data)"/><text x="302" y="344" class="label">读取当前依据</text>
-<path d="M538 220V425" stroke="#7dadff" marker-end="url(#data)"/><text x="548" y="383" class="label">保存来源证据</text>
-<path d="M1002 220V425" stroke="#7dadff" marker-end="url(#data)"/><text x="795" y="403" class="label">保存进度与适用经验</text>
-<rect x="40" y="365" width="175" height="100" rx="5" fill="#142235" stroke="#435b76"/><text x="127" y="405" text-anchor="middle" class="node">AI宿主</text><text x="127" y="435" text-anchor="middle" class="sub">模型 · 工具 · 事件</text>
-<path d="M128 365V311H743V220" stroke="#71dbc3" marker-end="url(#work)"/><text x="544" y="303" style="fill:#71dbc3" font-size="15">提供执行能力</text>
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="650" viewBox="0 0 1100 650" fill="#202c3b" role="img" aria-labelledby="title description">
+<title id="title">工作过程与资料流</title><desc id="description">围绕目标查证、执行与交付，持续保存依据和经验。</desc>
+<defs><marker id="work" viewBox="0 0 8 8" markerWidth="7" markerHeight="7" refX="7" refY="4" orient="auto"><path d="M1 1L7 4L1 7" fill="none" stroke="#475569" stroke-width="1.4" stroke-linejoin="round"/></marker><marker id="data" viewBox="0 0 8 8" markerWidth="7" markerHeight="7" refX="7" refY="4" orient="auto"><path d="M1 1L7 4L1 7" fill="none" stroke="#486e99" stroke-width="1.4" stroke-linejoin="round"/></marker></defs>
+<style>text{font-family:Arial,'Microsoft YaHei',sans-serif}.work{fill:none;stroke:#475569;stroke-width:1.7}.data{fill:none;stroke:#486e99;stroke-width:1.7}.feedback{fill:none;stroke:#667487;stroke-width:1.5;stroke-dasharray:6 5}</style>
+<rect width="1100" height="650" fill="#fff"/>
+<text x="40" y="44" font-size="28" font-weight="600">工作过程与资料流</text><text x="40" y="78" font-size="18" fill="#536171">围绕目标查证、执行与交付，持续保存依据和经验。</text>
+<path d="M948 210V137H333V210" class="feedback" marker-end="url(#work)"/><text x="640" y="125" text-anchor="middle" font-size="18" fill="#536171">使用反馈，修正当前任务</text>
+<rect x="44" y="210" width="168" height="96" rx="3" fill="#fff" stroke="#9ba9b9"/><text x="128" y="247" text-anchor="middle" font-size="21" font-weight="600">目标与补充</text><text x="128" y="280" text-anchor="middle" font-size="17" fill="#536171">用户输入</text>
+<rect x="249" y="210" width="168" height="96" rx="3" fill="#fff" stroke="#9ba9b9"/><text x="333" y="247" text-anchor="middle" font-size="21" font-weight="600">当前任务</text><text x="333" y="280" text-anchor="middle" font-size="17" fill="#536171">目标与条件</text>
+<rect x="454" y="210" width="168" height="96" rx="3" fill="#fff" stroke="#9ba9b9"/><text x="538" y="247" text-anchor="middle" font-size="21" font-weight="600">资料研究</text><text x="538" y="280" text-anchor="middle" font-size="17" fill="#536171">来源与判断</text>
+<rect x="659" y="210" width="168" height="96" rx="3" fill="#fff" stroke="#9ba9b9"/><text x="743" y="247" text-anchor="middle" font-size="21" font-weight="600">实际执行</text><text x="743" y="280" text-anchor="middle" font-size="17" fill="#536171">工具与执行者</text>
+<rect x="864" y="210" width="168" height="96" rx="3" fill="#fff" stroke="#9ba9b9"/><text x="948" y="247" text-anchor="middle" font-size="21" font-weight="600">交付成果</text><text x="948" y="280" text-anchor="middle" font-size="17" fill="#536171">产物与接续</text><path d="M212 258H245" class="work" marker-end="url(#work)"/>
+<path d="M417 258H450" class="work" marker-end="url(#work)"/>
+<path d="M622 258H655" class="work" marker-end="url(#work)"/>
+<path d="M827 258H860" class="work" marker-end="url(#work)"/>
+<path d="M310 550V306" class="data" marker-end="url(#data)"/><text x="288" y="416" text-anchor="end" font-size="18" fill="#486e99"><tspan x="288">读取</tspan><tspan x="288" dy="24">当前依据</tspan></text>
+<path d="M538 306V550" class="data" marker-end="url(#data)"/><text x="522" y="460" text-anchor="end" font-size="18" fill="#486e99"><tspan x="522">保存</tspan><tspan x="522" dy="24">来源证据</tspan></text>
+<path d="M948 306V550" class="data" marker-end="url(#data)"/><text x="965" y="440" text-anchor="start" font-size="18" fill="#486e99"><tspan x="965">保存进度</tspan><tspan x="965" dy="24">与适用经验</tspan></text>
+<rect x="655" y="402" width="175" height="85" rx="3" fill="#fafbfc" stroke="#9ba9b9"/><text x="742.5" y="436" text-anchor="middle" font-size="21" font-weight="600">AI 宿主</text><text x="742.5" y="468" text-anchor="middle" font-size="16" fill="#536171">模型 · 工具 · 事件</text>
+<path d="M743 402V306" class="work" marker-end="url(#work)"/><text x="757" y="352" text-anchor="start" font-size="18" fill="#536171"><tspan x="757">提供模型</tspan><tspan x="757" dy="24">和工具能力</tspan></text>
+<rect x="210" y="550" width="824" height="76" rx="3" fill="#fafbfc" stroke="#9ba9b9"/><text x="622" y="582" text-anchor="middle" font-size="21">项目 · 知识 · 经验 · 对象 · 资源</text><text x="622" y="610" text-anchor="middle" font-size="17" fill="#536171">任务原件、来源证据和实际成果保存在这里</text>
 </svg>

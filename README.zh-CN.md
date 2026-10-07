@@ -1,4 +1,4 @@
-<p align="center"><img src="assets/hero.svg" alt="AI Work System：持续上下文、基于来源的研究、可接续的工作" width="100%" /></p>
+<p align="center"><img src="assets/hero-zh.svg" alt="AI Work System：持续上下文、基于来源的研究、可接续的工作" width="100%" /></p>
 
 <p align="center"><a href="README.md">English</a> · <b>简体中文</b> · <a href="docs/quickstart.md">快速开始</a> · <a href="docs/architecture.md">架构</a> · <a href="docs/search-plugins.md">搜索插件</a></p>
 

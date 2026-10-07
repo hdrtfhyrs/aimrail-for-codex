@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.3.2 — Clear connector routing in bilingual diagrams
+
+- Simplified the English and Chinese covers to plain typography, with a localized Chinese cover.
+- Kept the workflow, feedback, record-reading/writing and host-capability connections; routed them in separate lanes without crossings.
+
+
 ## 0.3.1 — GitHub rendering compatibility
 
 - Replaced the landing-page diagram with original bilingual SVGs that keep the full workflow visible at repository width.
