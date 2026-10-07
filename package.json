@@ -1,7 +1,7 @@
 {
   "name": "ai-work-system",
-  "version": "0.1.0",
-  "description": "File-backed goals, project continuity, knowledge recall and handoffs for personal AI work.",
+  "version": "0.2.0",
+  "description": "Personal AI work system: file-backed context, search plugins, skills and reusable host integrations.",
   "type": "module",
   "license": "MIT",
   "author": "hdrtfhyrs",
@@ -9,5 +9,5 @@
   "engines": { "node": ">=24.0.0" },
   "scripts": { "start": "node bin/ai-work.mjs" },
   "repository": { "type": "git", "url": "https://github.com/hdrtfhyrs/ai-work-system.git" },
-  "keywords": ["ai", "context", "memory", "project-management", "agent", "handoff"]
+  "keywords": ["ai", "context", "memory", "project-management", "agent", "handoff", "search", "mcp", "skills"]
 }

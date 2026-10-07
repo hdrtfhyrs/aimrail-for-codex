@@ -1,0 +1,6 @@
+{
+  "hook_event_name": "UserPromptSubmit",
+  "session_id": "example-session",
+  "cwd": "<absolute repository directory>",
+  "prompt": "Continue the assigned project task from its saved files."
+}

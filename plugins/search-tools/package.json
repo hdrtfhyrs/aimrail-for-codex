@@ -1,0 +1,23 @@
+{
+  "name": "ai-work-system-search-tools",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Chinese public-web search and source-reading MCP with explicit coverage status",
+  "scripts": {
+    "start": "node server.mjs",
+    "test": "node --test tests.mjs"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.0.0",
+    "@mozilla/readability": "^0.6.0",
+    "cheerio": "^1.0.0",
+    "https-proxy-agent": "^7.0.6",
+    "jsdom": "^26.1.0",
+    "node-fetch": "^3.3.2"
+  },
+  "license": "MIT",
+  "engines": {
+    "node": ">=22"
+  }
+}

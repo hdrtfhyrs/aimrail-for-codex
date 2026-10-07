@@ -1,0 +1,4 @@
+interface:
+  display_name: "围绕成果协作"
+  short_description: "新聊天从目标与成果文件接续，内部用干净上下文子代理，总控协调，执行者交完整成果"
+  default_prompt: "使用 $outcome-collaboration，结合核心目标与累积要求安排新任务聊天和干净上下文子代理，从目标与成果原件接续，由执行负责人交完整结果。"

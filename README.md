@@ -2,7 +2,7 @@
 
 把长期目标、当前任务、知识与经验保存为可读文件，让 AI 换聊天、换执行者后仍有依据继续工作。
 
-AI Work System is a file-backed core for personal AI work: persistent goals, project state, knowledge recall, reusable experience and task handoffs. It provides local tools and templates that an AI host can read and use.
+AI Work System is a personal AI work system with file-backed goals, project continuity, knowledge recall, reusable experience, search tools, skills and host integrations. It publishes reusable source and instructions; users supply their own accounts, data and AI hosts.
 
 ## 整体怎样工作
 
@@ -33,14 +33,32 @@ flowchart TD
 | 经验记录、无效知识退役与恢复 | `src/knowledge-record.mjs`、`src/knowledge-lifecycle.mjs` |
 | 保存对象类别、职责、条件及资源声明 | `src/object-access.mjs`、`src/resources.mjs` |
 | 成果登记与生成接手材料 | `src/deliverables.mjs`、`handoff` 命令 |
+| 多来源搜索发现、候选保存、原文与来源扩展 | `plugins/search-tools/`、`plugins/baidu-search-mcp/` |
+| 社区文档、B站材料与网页读取工具 | `plugins/community-tools/`、`modules/search-integrations/` |
+| 研究、知识复用、写作与协作方法 | `skills/` |
+| 上下文注入、任务窗口、宿主角色及接续模板 | `integrations/` |
+| 信息收集、对象资料、协作、运行、存储与成果展示 | `modules/system/` |
 
 状态、上下文、知识检索、经验与成果模块从作者现用代码中提取并改为通用路径；工作区、对象/资源与命令入口为公开版适配。具体说明见 [代码来源与范围](docs/source-and-scope.md)。
 
-本仓库包含整体框架、核心代码、空白模板和结构示例。插件、技能包、宿主专用界面接入、个人账户数据和具体业务数据由使用者单独管理。
+本仓库公开作者自有的通用系统、搜索与其他插件、技能、宿主接入源码及空白模板。账号、个人知识、私人对话、实际业务数据由使用者自己提供；小说、销售和其他赚钱业务的专属实现不在本仓库内。
+
+按用途选择入口：
+
+| 你想使用什么 | 从哪里开始 |
+|---|---|
+| 先用项目、知识和接续核心 | [快速开始](docs/quickstart.md) |
+| 单独用搜索、网页读取和社区工具 | [搜索插件](docs/search-plugins.md) |
+| 给 AI 加入研究、知识与协作方法 | [技能与宿主接入](docs/skills-and-hosts.md) |
+| 阅读和配置一般信息、运行与存储模块 | [通用系统源码](docs/general-system.md) |
+
+这些模块保留现用实现，公开副本将个人路径与数据位置改为配置。它们有各自的依赖和入口，接入范围与实际运行条件见对应文档。
+
+独立核心适合先使用文件接续；完整系统的对象、资料与召回入口在 `integrations/context/`，连接 `modules/system/` 的完整资料库。两类资料接口的格式和初始化方法见 [技能与宿主接入](docs/skills-and-hosts.md)，按所选入口建立自己的库。
 
 ## 开始使用
 
-需要 Node.js 24 或更新版本。没有必装的第三方 npm 依赖；默认检索在本地进行。向量召回可选，需要使用者自己提供已运行的 Ollama 和本地 embedding 模型。
+核心命令需要 Node.js 24 或更新版本，无必装的第三方 npm 依赖；默认检索在本地进行。向量召回可选，需要使用者自己提供已运行的 Ollama 和本地 embedding 模型。搜索插件和其它模块按各自文档安装 npm/Python 依赖，并配置使用者自己的服务。
 
 下载仓库后，先创建你自己的工作区：
 
@@ -68,12 +86,12 @@ node bin/ai-work.mjs projects --workspace ./workspace
 
 ## 当前边界
 
-这是从个人使用环境整理出的核心公开版本。不同宿主的自动消息注入、账号接入、外部采集和界面分组需要各自适配；本版先通过命令提供同一份文件材料。代码不能保证模型始终理解正确，长期少返工要看真实任务。
+这是从个人使用环境整理出的通用源码公开版本。核心提供统一文件命令；搜索、技能、钩子和系统模块提供各自入口。宿主自动注入、界面操作、云端调用与持续任务需要对应宿主、使用者配置和外部服务，不因代码已经公开就自动接通。没有将整个公开副本在所有环境重新运行，长期少返工要看真实任务。
 
 `examples/` 中的条目是结构示例，均为虚构材料，不代表实际业务结果或验证过的经验。
 
 ## 许可与维护
 
-本仓库自有代码和文档采用 [MIT 许可证](LICENSE)。署名使用作者公开账号 [hdrtfhyrs](https://github.com/hdrtfhyrs)。第三方软件、模型、插件及外部材料保留其各自许可。
+本仓库自有代码和文档采用 [MIT 许可证](LICENSE)。署名使用作者公开账号 [hdrtfhyrs](https://github.com/hdrtfhyrs)。第三方软件、模型、插件及外部材料保留其各自许可，来源与依赖见 [第三方声明](THIRD_PARTY_NOTICES.md)。第三方安装包、模型权重和生产数据不随源码上传。
 
 欢迎提供具体使用问题、可复现的故障信息和改进。协作方式见 [CONTRIBUTING.md](CONTRIBUTING.md)。

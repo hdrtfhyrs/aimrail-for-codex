@@ -1,0 +1,21 @@
+{
+  "version": 1,
+  "node_path": "node",
+  "tool_timeout_seconds": 60000,
+  "local_limit": 10,
+  "discovery_count": 20,
+  "default_sources": [
+    "public",
+    "github",
+    "domestic",
+    "international"
+  ],
+  "max_tool_calls_per_day": 100,
+  "lease_seconds": 600,
+  "retry_after_seconds": 300,
+  "max_chars_per_document": 20000,
+  "raw_directory": "$data/system/信息中心/data/raw/task-collection",
+  "domestic_sites": [],
+  "pending": {},
+  "research": {}
+}

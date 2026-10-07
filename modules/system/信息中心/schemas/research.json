@@ -1,0 +1,192 @@
+{
+  "type": "object",
+  "properties": {
+    "overview": {
+      "type": "string"
+    },
+    "verified_facts": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "text": {
+            "type": "string"
+          },
+          "source_urls": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "supports": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "url": {
+                  "type": "string"
+                },
+                "quote": {
+                  "type": "string"
+                },
+                "locator": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "url",
+                "quote",
+                "locator"
+              ],
+              "additionalProperties": false
+            }
+          }
+        },
+        "required": [
+          "text",
+          "source_urls",
+          "supports"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "mechanism": {
+      "type": "string"
+    },
+    "why_useful": {
+      "type": "string"
+    },
+    "applications": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "remaining_gaps": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "financial_views": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "text": {
+            "type": "string"
+          },
+          "kind": {
+            "type": "string",
+            "enum": [
+              "opinion",
+              "prediction"
+            ]
+          },
+          "source_urls": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        },
+        "required": [
+          "text",
+          "kind",
+          "source_urls"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "evidence_level": {
+      "type": "string",
+      "enum": [
+        "full",
+        "mixed",
+        "excerpt"
+      ]
+    },
+    "reported_claims": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "text": {
+            "type": "string"
+          },
+          "source_urls": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "supports": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "url": {
+                  "type": "string"
+                },
+                "quote": {
+                  "type": "string"
+                },
+                "locator": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "url",
+                "quote",
+                "locator"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "claim_type": {
+            "type": "string",
+            "enum": [
+              "source_report"
+            ]
+          }
+        },
+        "required": [
+          "text",
+          "source_urls",
+          "supports",
+          "claim_type"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "source_requests": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {"source_id": {"type": "string"}, "reason": {"type": "string"}},
+        "required": ["source_id", "reason"],
+        "additionalProperties": false
+      }
+    },
+    "blocking_gaps": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "required": [
+    "overview",
+    "verified_facts",
+    "mechanism",
+    "why_useful",
+    "applications",
+    "remaining_gaps",
+    "financial_views",
+    "evidence_level",
+    "reported_claims",
+    "blocking_gaps",
+    "source_requests"
+  ],
+  "additionalProperties": false
+}

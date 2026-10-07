@@ -1,0 +1,11 @@
+{
+  "name": "ai-work-system-general-modules",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=22.13"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.31.0"
+  }
+}

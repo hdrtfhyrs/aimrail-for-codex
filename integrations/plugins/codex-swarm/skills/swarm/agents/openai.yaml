@@ -1,0 +1,6 @@
+interface:
+  display_name: "Codex 集群"
+  short_description: "按需并行调度 Codex 子代理并汇总结果"
+  default_prompt: "使用 $codex-swarm:swarm 把当前任务拆成独立子任务，并行处理后汇总验收。"
+policy:
+  allow_implicit_invocation: false

@@ -1,0 +1,18 @@
+{
+  "name": "codex-swarm",
+  "version": "0.1.0+codex.20260922204444",
+  "description": "按需使用 Codex 自身的子代理并行处理独立任务",
+  "author": {
+    "name": "hdrtfhyrs"
+  },
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Codex Swarm",
+    "shortDescription": "按需启动 Codex 子代理集群",
+    "longDescription": "仅在明确调用时加载集群工作流，使用 Codex 模型与额度调度并行子代理。",
+    "developerName": "hdrtfhyrs",
+    "category": "Productivity",
+    "capabilities": [],
+    "defaultPrompt": "使用 $codex-swarm:swarm 并行处理这项任务。"
+  }
+}

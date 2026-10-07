@@ -1,0 +1,6 @@
+npm/node_modules/
+bilibili-venv/
+state/
+__pycache__/
+*.pyc
+

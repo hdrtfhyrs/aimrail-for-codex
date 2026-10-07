@@ -1,0 +1,215 @@
+{
+  "note": "通用源码入口目录；文件存在、外部认证、实际调用及长期运行分别判断。",
+  "modules": [
+    {
+      "id": "task-collection",
+      "path": "信息中心/app/task_collection.py",
+      "kind": "python",
+      "description": "任务驱动多源采集：原库优先、来源范围、原件、失败/宿主续接、知识候选与采用记录；同原information.sqlite持久保存。"
+    },
+    {
+      "id": "object-knowledge",
+      "path": "资料中心/object-knowledge/objects.mjs",
+      "kind": "node",
+      "title": "计划前对象/类别知识与按需展开"
+    },
+    {
+      "id": "goal-handoff",
+      "path": "任务协作/handoff-files.mjs",
+      "kind": "node",
+      "title": "完整目标与文件交接"
+    },
+    {
+      "id": "context-manager",
+      "path": "任务协作/context-manager/context-manager.mjs",
+      "kind": "node",
+      "title": "AI上下文融合与原话接续"
+    },
+    {
+      "id": "task-reports",
+      "path": "$codex/context/task-reports.mjs",
+      "kind": "node",
+      "title": "成果主动回报"
+    },
+    {
+      "id": "task-observations",
+      "path": "任务协作/task-bridge.mjs",
+      "kind": "node",
+      "title": "任务登记与协作观察"
+    },
+    {
+      "id": "event-ingest",
+      "path": "运行中心/event-ingest.mjs",
+      "kind": "node",
+      "title": "业务事件接收"
+    },
+    {
+      "id": "event-dispatch",
+      "path": "运行中心/event-dispatch.mjs",
+      "kind": "node",
+      "title": "事件派发与任务恢复"
+    },
+    {
+      "id": "github-search",
+      "path": "../search-integrations/github-search.mjs",
+      "kind": "node",
+      "title": "GitHub搜索与原件"
+    },
+    {
+      "id": "domestic-search",
+      "path": "../search-integrations/domestic-search.mjs",
+      "kind": "node",
+      "title": "国内论坛只读搜索"
+    },
+    {
+      "id": "international-search",
+      "path": "../search-integrations/international-search.mjs",
+      "kind": "node",
+      "title": "国外论坛只读搜索"
+    },
+    {
+      "id": "resource-mount",
+      "path": "$codex/context/resources.mjs",
+      "kind": "node",
+      "title": "系统资料按需检索"
+    },
+    {
+      "id": "knowledge-mount",
+      "path": "$codex/context/knowledge.mjs",
+      "kind": "node",
+      "title": "知识原件加载及旧检索兼容；新检索用local-recall"
+    },
+    {
+      "id": "local-recall",
+      "path": "$codex/context/recall.mjs",
+      "kind": "node",
+      "title": "统一本地知识/经验/对象/成果检索：字面与语义"
+    },
+    {
+      "id": "gemini-executor",
+      "path": "运行中心/providers/gemini.mjs",
+      "kind": "node",
+      "title": "Gemini执行适配器"
+    },
+    {
+      "id": "drive-storage",
+      "path": "存储接入/google-drive.mjs",
+      "kind": "node",
+      "title": "Google云盘存取恢复"
+    },
+    {
+      "id": "boss-access",
+      "path": "浏览器接入/boss-access.mjs",
+      "kind": "node",
+      "title": "BOSS只读与闪烁诊断"
+    },
+    {
+      "id": "cloud-recovery",
+      "path": "信息中心/接续接入/cloud-recovery.py",
+      "kind": "python",
+      "title": "云端回流接续"
+    },
+    {
+      "id": "startup-recovery",
+      "path": "运行中心/state.ps1",
+      "kind": "powershell",
+      "title": "启动恢复状态"
+    },
+    {
+      "id": "project-map",
+      "path": "资料中心/project-map.mjs",
+      "kind": "node",
+      "title": "AI用系统结构索引"
+    },
+    {
+      "id": "parallel-integration",
+      "path": "运行中心/system.mjs",
+      "kind": "node",
+      "title": "系统中央运行入口"
+    },
+    {
+      "id": "fresh-context",
+      "path": "../../skills/outcome-collaboration/SKILL.md",
+      "kind": "document",
+      "title": "干净上下文派工规则"
+    },
+    {
+      "id": "public-search",
+      "path": "$plugins/search-tools/cli.mjs",
+      "kind": "node",
+      "title": "既有公共搜索与原文读取"
+    },
+    {
+      "id": "community-tools",
+      "path": "$plugins/community-tools/cli.mjs",
+      "kind": "node",
+      "title": "Context7库文档、B站材料、Jina正文与OpenCLI条件入口"
+    },
+    {
+      "id": "files",
+      "path": "$codex/context/system-maintenance.mjs",
+      "kind": "node",
+      "title": "项目文件归属与精准冷恢复"
+    },
+    {
+      "id": "local-workspace",
+      "path": "本地统一/workspace.mjs",
+      "kind": "node",
+      "title": "本地工作资产统一按需入口"
+    },
+    {
+      "id": "conversation-records",
+      "path": "本地统一/对话记录/conversations.mjs",
+      "kind": "node",
+      "title": "跨宿主对话分类与原件读取"
+    },
+    {
+      "id": "runtime-inventory",
+      "path": "本地统一/运行环境/runtime.mjs",
+      "kind": "node",
+      "title": "本地环境命令与服务调用导航"
+    },
+    {
+      "id": "file-archive",
+      "path": "本地统一/文件归档/lifecycle.py",
+      "kind": "python",
+      "title": "本地文件云归档与精确清理"
+    },
+    {
+      "id": "conversation-actions",
+      "path": "本地统一/对话记录/action-manager/action-manager.mjs",
+      "kind": "node",
+      "title": "原版对话按操作归属与导航"
+    },
+    {
+      "id": "methods",
+      "path": "$codex/context/methods.mjs",
+      "kind": "node",
+      "title": "历史方法、理由与演进"
+    },
+    {
+      "id": "storage-health",
+      "path": "存储接入/storage-health.mjs",
+      "kind": "node",
+      "title": "磁盘余量、增长基线与写入空间预检"
+    },
+    {
+      "id": "bilibili-collection",
+      "path": "../search-integrations/bilibili-collection.mjs",
+      "kind": "node",
+      "title": "B站简介评论与字幕覆盖采集"
+    },
+    {
+      "id": "codex-executor",
+      "path": "运行中心/providers/codex.mjs",
+      "kind": "node",
+      "title": "Codex实际制作与独立运行验收"
+    },
+    {
+      "id": "showcase",
+      "path": "成果展厅/showcase.mjs",
+      "kind": "node",
+      "title": "成果展厅：一图看懂与真实成品展示"
+    }
+  ]
+}

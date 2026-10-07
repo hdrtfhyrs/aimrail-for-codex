@@ -1,0 +1,328 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:ai-work-system:object-knowledge:bundle:v1",
+  "title": "对象知识导入包 v1",
+  "type": "object",
+  "required": [
+    "format",
+    "records",
+    "reason"
+  ],
+  "properties": {
+    "format": {
+      "const": "ai-object-knowledge-bundle-v1"
+    },
+    "reason": {
+      "type": "string",
+      "minLength": 1
+    },
+    "expectedVersions": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "integer",
+        "minimum": 0
+      }
+    },
+    "records": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/record"
+      }
+    }
+  },
+  "$defs": {
+    "strings": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "uniqueItems": true
+    },
+    "scope": {
+      "type": "object",
+      "properties": {
+        "project": {
+          "type": "string",
+          "minLength": 1
+        },
+        "branch": {
+          "type": "string",
+          "minLength": 1
+        },
+        "operations": {
+          "$ref": "#/$defs/strings"
+        },
+        "conditions": {
+          "$ref": "#/$defs/strings"
+        }
+      }
+    },
+    "source": {
+      "type": "object",
+      "required": [
+        "id",
+        "kind"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "kind": {
+          "enum": [
+            "local",
+            "url",
+            "registry"
+          ]
+        },
+        "path": {
+          "type": "string",
+          "minLength": 1
+        },
+        "url": {
+          "type": "string",
+          "pattern": "^https?://"
+        },
+        "ref": {
+          "type": "string",
+          "minLength": 1
+        },
+        "selector": {
+          "type": "string",
+          "minLength": 1
+        },
+        "checkedAt": {
+          "type": "string",
+          "minLength": 1
+        },
+        "sha256": {
+          "type": "string",
+          "pattern": "^[a-fA-F0-9]{64}$"
+        },
+        "note": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "anyOf": [
+        {
+          "required": [
+            "path"
+          ]
+        },
+        {
+          "required": [
+            "url"
+          ]
+        },
+        {
+          "required": [
+            "ref"
+          ]
+        }
+      ]
+    },
+    "assertion": {
+      "type": "object",
+      "required": [
+        "id",
+        "kind",
+        "predicate",
+        "status"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "kind": {
+          "enum": [
+            "fact",
+            "role",
+            "state",
+            "judgment",
+            "recommendation"
+          ]
+        },
+        "predicate": {
+          "type": "string",
+          "minLength": 1
+        },
+        "status": {
+          "enum": [
+            "verified",
+            "unverified",
+            "disputed",
+            "superseded"
+          ]
+        },
+        "sourceIds": {
+          "$ref": "#/$defs/strings"
+        },
+        "scope": {
+          "$ref": "#/$defs/scope"
+        },
+        "observedAt": {
+          "type": "string",
+          "minLength": 1
+        },
+        "validFrom": {
+          "type": "string",
+          "minLength": 1
+        },
+        "validUntil": {
+          "type": "string",
+          "minLength": 1
+        },
+        "reviewAfter": {
+          "type": "string",
+          "minLength": 1
+        },
+        "supersedes": {
+          "$ref": "#/$defs/strings"
+        },
+        "note": {
+          "type": "string",
+          "minLength": 1
+        },
+        "identityBinding": {
+          "type": "object",
+          "required": [
+            "model",
+            "digest"
+          ],
+          "properties": {
+            "model": {
+              "type": "string",
+              "minLength": 1
+            },
+            "digest": {
+              "type": "string",
+              "minLength": 1
+            }
+          }
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "status": {
+                "const": "verified"
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "sourceIds"
+            ],
+            "properties": {
+              "sourceIds": {
+                "minItems": 1
+              }
+            }
+          }
+        }
+      ]
+    },
+    "claim": {
+      "allOf": [
+        {
+          "$ref": "#/$defs/assertion"
+        },
+        {
+          "type": "object",
+          "required": [
+            "value"
+          ],
+          "properties": {
+            "value": {}
+          }
+        }
+      ]
+    },
+    "relation": {
+      "allOf": [
+        {
+          "$ref": "#/$defs/assertion"
+        },
+        {
+          "type": "object",
+          "required": [
+            "targetId"
+          ],
+          "properties": {
+            "targetId": {
+              "type": "string",
+              "minLength": 1
+            }
+          }
+        }
+      ]
+    },
+    "record": {
+      "type": "object",
+      "required": [
+        "id",
+        "kind",
+        "name",
+        "summary"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 240
+        },
+        "kind": {
+          "enum": [
+            "object",
+            "category"
+          ]
+        },
+        "name": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 500
+        },
+        "summary": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 1800
+        },
+        "aliases": {
+          "$ref": "#/$defs/strings"
+        },
+        "categories": {
+          "$ref": "#/$defs/strings"
+        },
+        "sourceRefs": {
+          "$ref": "#/$defs/strings"
+        },
+        "unknowns": {
+          "$ref": "#/$defs/strings"
+        },
+        "sources": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/source"
+          }
+        },
+        "claims": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/claim"
+          }
+        },
+        "relations": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/relation"
+          }
+        }
+      }
+    }
+  }
+}

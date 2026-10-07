@@ -1,0 +1,100 @@
+{
+  "type": "object",
+  "properties": {
+    "decisions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "item_id": {
+            "type": "string"
+          },
+          "event_title": {
+            "type": "string"
+          },
+          "category": {
+            "type": "string",
+            "enum": [
+              "ai",
+              "coding",
+              "finance",
+              "science",
+              "world",
+              "life"
+            ]
+          },
+          "disposition": {
+            "type": "string",
+            "enum": [
+              "archive",
+              "learn",
+              "watch",
+              "action",
+              "already_applied"
+            ]
+          },
+          "importance": {
+            "type": "integer"
+          },
+          "summary": {
+            "type": "string"
+          },
+          "why_useful": {
+            "type": "string"
+          },
+          "lesson": {
+            "type": "string"
+          },
+          "next_action": {
+            "type": "string"
+          },
+          "source_urls": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "low",
+              "medium",
+              "high"
+            ]
+          },
+          "action_type": {
+            "type": "string",
+            "enum": [
+              "none",
+              "research",
+              "system_model",
+              "system_tool",
+              "pricing_check",
+              "finance_explain",
+              "learning_note"
+            ]
+          }
+        },
+        "required": [
+          "item_id",
+          "event_title",
+          "category",
+          "disposition",
+          "importance",
+          "summary",
+          "why_useful",
+          "lesson",
+          "next_action",
+          "source_urls",
+          "confidence",
+          "action_type"
+        ],
+        "additionalProperties": false
+      }
+    }
+  },
+  "required": [
+    "decisions"
+  ],
+  "additionalProperties": false
+}

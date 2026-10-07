@@ -1,0 +1,14 @@
+{
+  "name": "ai-work-system-baidu-compat",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "license": "MIT",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "start": "node index.repaired.mjs"
+  },
+  "description": "Legacy baidu_search/fetch_url MCP names backed by ../search-tools; install that sibling first."
+}

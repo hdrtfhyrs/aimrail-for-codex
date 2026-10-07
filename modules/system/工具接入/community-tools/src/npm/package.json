@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "@jackwener/opencli": "1.8.8",
+    "ctx7": "0.5.12"
+  }
+}

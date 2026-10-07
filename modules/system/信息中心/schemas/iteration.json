@@ -1,0 +1,119 @@
+{
+  "type": "object",
+  "properties": {
+    "outcome": {
+      "type": "string",
+      "enum": [
+        "apply",
+        "already_satisfied",
+        "not_applicable",
+        "needs_research",
+        "needs_user",
+        "deferred"
+      ]
+    },
+    "summary": {
+      "type": "string"
+    },
+    "source_findings": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "text": {
+            "type": "string"
+          },
+          "url": {
+            "type": "string"
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "full",
+              "excerpt"
+            ]
+          }
+        },
+        "required": [
+          "text",
+          "url",
+          "status"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "remaining_gaps": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "edits": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "path": {
+            "type": "string"
+          },
+          "before": {
+            "type": "string"
+          },
+          "after": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "path",
+          "before",
+          "after"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "checks": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "args": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "path": {
+            "type": "string"
+          },
+          "operator": {
+            "type": "string",
+            "enum": [
+              "exists",
+              "equals",
+              "contains"
+            ]
+          },
+          "expected_json": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "args",
+          "path",
+          "operator",
+          "expected_json"
+        ],
+        "additionalProperties": false
+      }
+    }
+  },
+  "required": [
+    "outcome",
+    "summary",
+    "source_findings",
+    "remaining_gaps",
+    "edits",
+    "checks"
+  ],
+  "additionalProperties": false
+}

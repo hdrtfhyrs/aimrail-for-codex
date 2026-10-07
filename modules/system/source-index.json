@@ -1,0 +1,576 @@
+{
+  "origin": "Existing owner-maintained AI work system; original personal paths are intentionally omitted.",
+  "extracted": [
+    {
+      "source": "任务协作/claude-review.mjs",
+      "file": "任务协作/claude-review.mjs",
+      "adapted": true
+    },
+    {
+      "source": "任务协作/context-manager/context-manager.mjs",
+      "file": "任务协作/context-manager/context-manager.mjs",
+      "adapted": true
+    },
+    {
+      "source": "任务协作/context-manager/dialogue-context.mjs",
+      "file": "任务协作/context-manager/dialogue-context.mjs",
+      "adapted": true
+    },
+    {
+      "source": "任务协作/context-manager/hook-adapter.mjs",
+      "file": "任务协作/context-manager/hook-adapter.mjs",
+      "adapted": true
+    },
+    {
+      "source": "任务协作/handoff-files.mjs",
+      "file": "任务协作/handoff-files.mjs",
+      "adapted": true
+    },
+    {
+      "source": "任务协作/task-bridge.mjs",
+      "file": "任务协作/task-bridge.mjs",
+      "adapted": true
+    },
+    {
+      "source": "任务协作/task-window.mjs",
+      "file": "任务协作/task-window.mjs",
+      "adapted": true
+    },
+    {
+      "source": "信息中心/app/actions.py",
+      "file": "信息中心/app/actions.py",
+      "adapted": true
+    },
+    {
+      "source": "信息中心/app/cloud_download.py",
+      "file": "信息中心/app/cloud_download.py",
+      "adapted": true
+    },
+    {
+      "source": "信息中心/app/cloud_receive.py",
+      "file": "信息中心/app/cloud_receive.py",
+      "adapted": true
+    },
+    {
+      "source": "信息中心/app/cloud_recovery_adapter.py",
+      "file": "信息中心/app/cloud_recovery_adapter.py",
+      "adapted": true
+    },
+    {
+      "source": "信息中心/app/cloud_sync.py",
+      "file": "信息中心/app/cloud_sync.py",
+      "adapted": true
+    },
+    {
+      "source": "信息中心/app/collector.py",
+      "file": "信息中心/app/collector.py",
+      "adapted": true
+    },
+    {
+      "source": "信息中心/app/common.py",
+      "file": "信息中心/app/common.py",
+      "adapted": true
+    },
+    {
+      "source": "信息中心/app/evidence_scope.py",
+      "file": "信息中心/app/evidence_scope.py",
+      "adapted": true
+    },
+    {
+      "source": "信息中心/app/iteration.py",
+      "file": "信息中心/app/iteration.py",
+      "adapted": true
+    },
+    {
+      "source": "信息中心/app/launch.py",
+      "file": "信息中心/app/launch.py",
+      "adapted": true
+    },
+    {
+      "source": "信息中心/app/main.py",
+      "file": "信息中心/app/main.py",
+      "adapted": true
+    },
+    {
+      "source": "信息中心/app/models.py",
+      "file": "信息中心/app/models.py",
+      "adapted": true
+    },
+    {
+      "source": "信息中心/app/operations.py",
+      "file": "信息中心/app/operations.py",
+      "adapted": true
+    },
+    {
+      "source": "信息中心/app/processor.py",
+      "file": "信息中心/app/processor.py",
+      "adapted": true
+    },
+    {
+      "source": "信息中心/app/publisher.py",
+      "file": "信息中心/app/publisher.py",
+      "adapted": true
+    },
+    {
+      "source": "信息中心/app/queue_policy.py",
+      "file": "信息中心/app/queue_policy.py",
+      "adapted": true
+    },
+    {
+      "source": "信息中心/app/task_collection.py",
+      "file": "信息中心/app/task_collection.py",
+      "adapted": true
+    },
+    {
+      "source": "信息中心/cloud/app/__init__.py",
+      "file": "信息中心/cloud/app/__init__.py",
+      "adapted": true
+    },
+    {
+      "source": "信息中心/cloud/app/collector.py",
+      "file": "信息中心/cloud/app/collector.py",
+      "adapted": true
+    },
+    {
+      "source": "信息中心/cloud/app/common.py",
+      "file": "信息中心/cloud/app/common.py",
+      "adapted": true
+    },
+    {
+      "source": "信息中心/cloud/native_delivery.py",
+      "file": "信息中心/cloud/native_delivery.py",
+      "adapted": true
+    },
+    {
+      "source": "信息中心/cloud/requirements.txt",
+      "file": "信息中心/cloud/requirements.txt",
+      "adapted": false
+    },
+    {
+      "source": "信息中心/cloud/run_collect.py",
+      "file": "信息中心/cloud/run_collect.py",
+      "adapted": true
+    },
+    {
+      "source": "信息中心/cloud/run_native.py",
+      "file": "信息中心/cloud/run_native.py",
+      "adapted": true
+    },
+    {
+      "source": "信息中心/control.ps1",
+      "file": "信息中心/control.ps1",
+      "adapted": false
+    },
+    {
+      "source": "信息中心/install-schedule.ps1",
+      "file": "信息中心/install-schedule.ps1",
+      "adapted": true
+    },
+    {
+      "source": "信息中心/prompts/iteration.txt",
+      "file": "信息中心/prompts/iteration.txt",
+      "adapted": false
+    },
+    {
+      "source": "信息中心/prompts/research.txt",
+      "file": "信息中心/prompts/research.txt",
+      "adapted": false
+    },
+    {
+      "source": "信息中心/prompts/triage.txt",
+      "file": "信息中心/prompts/triage.txt",
+      "adapted": false
+    },
+    {
+      "source": "信息中心/schemas/iteration.json",
+      "file": "信息中心/schemas/iteration.json",
+      "adapted": false
+    },
+    {
+      "source": "信息中心/schemas/research.json",
+      "file": "信息中心/schemas/research.json",
+      "adapted": false
+    },
+    {
+      "source": "信息中心/schemas/triage.json",
+      "file": "信息中心/schemas/triage.json",
+      "adapted": false
+    },
+    {
+      "source": "信息中心/恢复自动采集.ps1",
+      "file": "信息中心/恢复自动采集.ps1",
+      "adapted": true
+    },
+    {
+      "source": "信息中心/接续接入/cloud-recovery.py",
+      "file": "信息中心/接续接入/cloud-recovery.py",
+      "adapted": true
+    },
+    {
+      "source": "信息中心/接续接入/native-receive.py",
+      "file": "信息中心/接续接入/native-receive.py",
+      "adapted": true
+    },
+    {
+      "source": "信息中心/暂停自动采集.ps1",
+      "file": "信息中心/暂停自动采集.ps1",
+      "adapted": true
+    },
+    {
+      "source": "存储接入/cold_archive.py",
+      "file": "存储接入/cold_archive.py",
+      "adapted": true
+    },
+    {
+      "source": "存储接入/google-drive.mjs",
+      "file": "存储接入/google-drive.mjs",
+      "adapted": true
+    },
+    {
+      "source": "存储接入/storage-health.mjs",
+      "file": "存储接入/storage-health.mjs",
+      "adapted": true
+    },
+    {
+      "source": "存储接入/storage.py",
+      "file": "存储接入/storage.py",
+      "adapted": true
+    },
+    {
+      "source": "工具接入/community-tools/src/bili-local.py",
+      "file": "工具接入/community-tools/src/bili-local.py",
+      "adapted": true
+    },
+    {
+      "source": "工具接入/community-tools/src/cli.mjs",
+      "file": "工具接入/community-tools/src/cli.mjs",
+      "adapted": true
+    },
+    {
+      "source": "工具接入/community-tools/src/npm/package.json",
+      "file": "工具接入/community-tools/src/npm/package.json",
+      "adapted": false
+    },
+    {
+      "source": "工具接入/community-tools/src/restore.ps1",
+      "file": "工具接入/community-tools/src/restore.ps1",
+      "adapted": true
+    },
+    {
+      "source": "成果展厅/screenshot.mjs",
+      "file": "成果展厅/screenshot.mjs",
+      "adapted": true
+    },
+    {
+      "source": "成果展厅/showcase.mjs",
+      "file": "成果展厅/showcase.mjs",
+      "adapted": true
+    },
+    {
+      "source": "成果展厅/web/app.css",
+      "file": "成果展厅/web/app.css",
+      "adapted": false
+    },
+    {
+      "source": "成果展厅/web/app.js",
+      "file": "成果展厅/web/app.js",
+      "adapted": true
+    },
+    {
+      "source": "成果展厅/web/index.html",
+      "file": "成果展厅/web/index.html",
+      "adapted": false
+    },
+    {
+      "source": "本地统一/model-links.mjs",
+      "file": "本地统一/model-links.mjs",
+      "adapted": true
+    },
+    {
+      "source": "本地统一/workspace.mjs",
+      "file": "本地统一/workspace.mjs",
+      "adapted": true
+    },
+    {
+      "source": "本地统一/对话记录/action-manager/action-manager.mjs",
+      "file": "本地统一/对话记录/action-manager/action-manager.mjs",
+      "adapted": true
+    },
+    {
+      "source": "本地统一/对话记录/action-manager/app-server-client.mjs",
+      "file": "本地统一/对话记录/action-manager/app-server-client.mjs",
+      "adapted": true
+    },
+    {
+      "source": "本地统一/对话记录/action-manager/catalog-extension.mjs",
+      "file": "本地统一/对话记录/action-manager/catalog-extension.mjs",
+      "adapted": true
+    },
+    {
+      "source": "本地统一/对话记录/action-manager/history-user-events.mjs",
+      "file": "本地统一/对话记录/action-manager/history-user-events.mjs",
+      "adapted": true
+    },
+    {
+      "source": "本地统一/对话记录/action-manager/native-routing.mjs",
+      "file": "本地统一/对话记录/action-manager/native-routing.mjs",
+      "adapted": true
+    },
+    {
+      "source": "本地统一/对话记录/action-manager/native-sections.mjs",
+      "file": "本地统一/对话记录/action-manager/native-sections.mjs",
+      "adapted": true
+    },
+    {
+      "source": "本地统一/对话记录/action-manager/native-sort.mjs",
+      "file": "本地统一/对话记录/action-manager/native-sort.mjs",
+      "adapted": true
+    },
+    {
+      "source": "本地统一/对话记录/action-manager/project-registry.mjs",
+      "file": "本地统一/对话记录/action-manager/project-registry.mjs",
+      "adapted": true
+    },
+    {
+      "source": "本地统一/对话记录/action-manager/semantic-routing.mjs",
+      "file": "本地统一/对话记录/action-manager/semantic-routing.mjs",
+      "adapted": true
+    },
+    {
+      "source": "本地统一/对话记录/action-manager/view-server.mjs",
+      "file": "本地统一/对话记录/action-manager/view-server.mjs",
+      "adapted": true
+    },
+    {
+      "source": "本地统一/对话记录/action-manager/管理页.html",
+      "file": "本地统一/对话记录/action-manager/管理页.html",
+      "adapted": false
+    },
+    {
+      "source": "本地统一/对话记录/api-records.mjs",
+      "file": "本地统一/对话记录/api-records.mjs",
+      "adapted": true
+    },
+    {
+      "source": "本地统一/对话记录/auto-routing.mjs",
+      "file": "本地统一/对话记录/auto-routing.mjs",
+      "adapted": true
+    },
+    {
+      "source": "本地统一/对话记录/conversations.mjs",
+      "file": "本地统一/对话记录/conversations.mjs",
+      "adapted": true
+    },
+    {
+      "source": "本地统一/对话记录/management.mjs",
+      "file": "本地统一/对话记录/management.mjs",
+      "adapted": true
+    },
+    {
+      "source": "本地统一/对话记录/original-manager/app-client.mjs",
+      "file": "本地统一/对话记录/original-manager/app-client.mjs",
+      "adapted": true
+    },
+    {
+      "source": "本地统一/对话记录/original-manager/inspect-original.ps1",
+      "file": "本地统一/对话记录/original-manager/inspect-original.ps1",
+      "adapted": false
+    },
+    {
+      "source": "本地统一/对话记录/original-manager/manager.mjs",
+      "file": "本地统一/对话记录/original-manager/manager.mjs",
+      "adapted": true
+    },
+    {
+      "source": "本地统一/对话记录/original-manager/recovery.mjs",
+      "file": "本地统一/对话记录/original-manager/recovery.mjs",
+      "adapted": true
+    },
+    {
+      "source": "本地统一/对话记录/original-manager/resume-original.ps1",
+      "file": "本地统一/对话记录/original-manager/resume-original.ps1",
+      "adapted": false
+    },
+    {
+      "source": "本地统一/对话记录/original-manager/startup-adapter.mjs",
+      "file": "本地统一/对话记录/original-manager/startup-adapter.mjs",
+      "adapted": true
+    },
+    {
+      "source": "本地统一/对话记录/original-manager/supervisor.mjs",
+      "file": "本地统一/对话记录/original-manager/supervisor.mjs",
+      "adapted": true
+    },
+    {
+      "source": "本地统一/对话记录/routing-event.mjs",
+      "file": "本地统一/对话记录/routing-event.mjs",
+      "adapted": true
+    },
+    {
+      "source": "本地统一/对话记录/ui-original/sidebar-snapshot.mjs",
+      "file": "本地统一/对话记录/ui-original/sidebar-snapshot.mjs",
+      "adapted": true
+    },
+    {
+      "source": "本地统一/对话记录/对话改造/启动层级聊天.mjs",
+      "file": "本地统一/对话记录/对话改造/启动层级聊天.mjs",
+      "adapted": true
+    },
+    {
+      "source": "本地统一/对话记录/对话改造/启动层级聊天.ps1",
+      "file": "本地统一/对话记录/对话改造/启动层级聊天.ps1",
+      "adapted": false
+    },
+    {
+      "source": "本地统一/对话记录/对话改造/层级显示开关.mjs",
+      "file": "本地统一/对话记录/对话改造/层级显示开关.mjs",
+      "adapted": true
+    },
+    {
+      "source": "本地统一/文件归档/lifecycle.py",
+      "file": "本地统一/文件归档/lifecycle.py",
+      "adapted": true
+    },
+    {
+      "source": "本地统一/运行环境/current-evidence.mjs",
+      "file": "本地统一/运行环境/current-evidence.mjs",
+      "adapted": true
+    },
+    {
+      "source": "本地统一/运行环境/desktop-navigation.mjs",
+      "file": "本地统一/运行环境/desktop-navigation.mjs",
+      "adapted": true
+    },
+    {
+      "source": "本地统一/运行环境/observe.ps1",
+      "file": "本地统一/运行环境/observe.ps1",
+      "adapted": false
+    },
+    {
+      "source": "本地统一/运行环境/runtime.mjs",
+      "file": "本地统一/运行环境/runtime.mjs",
+      "adapted": true
+    },
+    {
+      "source": "浏览器接入/account-browser-access.mjs",
+      "file": "浏览器接入/account-browser-access.mjs",
+      "adapted": true
+    },
+    {
+      "source": "浏览器接入/boss-access.mjs",
+      "file": "浏览器接入/boss-access.mjs",
+      "adapted": true
+    },
+    {
+      "source": "资料中心/handler.mjs",
+      "file": "资料中心/handler.mjs",
+      "adapted": true
+    },
+    {
+      "source": "资料中心/index.html",
+      "file": "资料中心/index.html",
+      "adapted": false
+    },
+    {
+      "source": "资料中心/knowledge-service.mjs",
+      "file": "资料中心/knowledge-service.mjs",
+      "adapted": true
+    },
+    {
+      "source": "资料中心/object-knowledge/objects.mjs",
+      "file": "资料中心/object-knowledge/objects.mjs",
+      "adapted": true
+    },
+    {
+      "source": "资料中心/object-knowledge/reality.mjs",
+      "file": "资料中心/object-knowledge/reality.mjs",
+      "adapted": true
+    },
+    {
+      "source": "资料中心/object-knowledge/schema.json",
+      "file": "资料中心/object-knowledge/schema.json",
+      "adapted": false
+    },
+    {
+      "source": "资料中心/project-map.mjs",
+      "file": "资料中心/project-map.mjs",
+      "adapted": true
+    },
+    {
+      "source": "资料中心/registry.mjs",
+      "file": "资料中心/registry.mjs",
+      "adapted": true
+    },
+    {
+      "source": "运行中心/boot-recovery.mjs",
+      "file": "运行中心/boot-recovery.mjs",
+      "adapted": true
+    },
+    {
+      "source": "运行中心/boot-recovery.ps1",
+      "file": "运行中心/boot-recovery.ps1",
+      "adapted": true
+    },
+    {
+      "source": "运行中心/boot.ps1",
+      "file": "运行中心/boot.ps1",
+      "adapted": false
+    },
+    {
+      "source": "运行中心/event-dispatch.mjs",
+      "file": "运行中心/event-dispatch.mjs",
+      "adapted": true
+    },
+    {
+      "source": "运行中心/event-ingest.mjs",
+      "file": "运行中心/event-ingest.mjs",
+      "adapted": true
+    },
+    {
+      "source": "运行中心/event-pipeline.mjs",
+      "file": "运行中心/event-pipeline.mjs",
+      "adapted": true
+    },
+    {
+      "source": "运行中心/index.html",
+      "file": "运行中心/index.html",
+      "adapted": true
+    },
+    {
+      "source": "运行中心/install-startup.ps1",
+      "file": "运行中心/install-startup.ps1",
+      "adapted": false
+    },
+    {
+      "source": "运行中心/module-registry.mjs",
+      "file": "运行中心/module-registry.mjs",
+      "adapted": true
+    },
+    {
+      "source": "运行中心/providers/codex.mjs",
+      "file": "运行中心/providers/codex.mjs",
+      "adapted": true
+    },
+    {
+      "source": "运行中心/providers/gemini-runtime/package.json",
+      "file": "运行中心/providers/gemini-runtime/package.json",
+      "adapted": false
+    },
+    {
+      "source": "运行中心/providers/gemini.mjs",
+      "file": "运行中心/providers/gemini.mjs",
+      "adapted": true
+    },
+    {
+      "source": "运行中心/state.ps1",
+      "file": "运行中心/state.ps1",
+      "adapted": false
+    },
+    {
+      "source": "运行中心/system.mjs",
+      "file": "运行中心/system.mjs",
+      "adapted": true
+    }
+  ],
+  "excluded": "Business modules, generated private navigation pages, production state/configuration, fixtures, tests, downloaded dependencies and reference material."
+}

@@ -1,0 +1,13 @@
+{
+  "dependencies": {
+    "@jackwener/opencli": "1.8.8",
+    "ctx7": "0.5.12",
+    "undici": "7.29.0"
+  },
+  "name": "ai-work-system-community-dependencies",
+  "version": "1.0.0",
+  "private": true,
+  "engines": {
+    "node": ">=22.19.0"
+  }
+}

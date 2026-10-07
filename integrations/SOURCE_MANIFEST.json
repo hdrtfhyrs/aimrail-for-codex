@@ -1,0 +1,839 @@
+{
+  "scope": "skills, integrations, tools, docs/skills-and-hosts.md",
+  "license": "MIT for local authored source/additions only; upstream omitted and retains its original licence",
+  "files": [
+    {
+      "file": "skills/evidence-research/references/diagnosis.md",
+      "source": "personal-codex/skills/evidence-research/references/diagnosis.md",
+      "kind": "self-owned source",
+      "bytes": 3284,
+      "sha256": "b2b6c7cfd870580396ba352e03dae2fee364c9a002b91bf7dacdca3aaa47b830"
+    },
+    {
+      "file": "skills/evidence-research/references/history.md",
+      "source": "personal-codex/skills/evidence-research/references/history.md",
+      "kind": "self-owned source",
+      "bytes": 1114,
+      "sha256": "e944956507282b560925a9e5590c6a3aa736d5d88f70931c37f7a606565ede0d"
+    },
+    {
+      "file": "skills/evidence-research/references/search-coverage.md",
+      "source": "personal-codex/skills/evidence-research/references/search-coverage.md",
+      "kind": "self-owned source",
+      "bytes": 5034,
+      "sha256": "7e35b332572ccc7983a481a0908f9f28a07f8532695091487cea79e9f4f81165"
+    },
+    {
+      "file": "skills/evidence-research/SKILL.md",
+      "source": "personal-codex/skills/evidence-research/SKILL.md",
+      "kind": "self-owned source",
+      "bytes": 8834,
+      "sha256": "8da0e0bb1ec5ae63939e24cfe92af7c172bc7781fbf40f526684dc88a144ae7d"
+    },
+    {
+      "file": "skills/knowledge-docs/SKILL.md",
+      "source": "personal-codex/skills/knowledge-docs/SKILL.md",
+      "kind": "self-owned source",
+      "bytes": 1350,
+      "sha256": "0fbb965be831cbbbd5b3040296cfe9df2f4e5e11cde79ed21631f2fc0c3771f8"
+    },
+    {
+      "file": "skills/knowledge-recall/SKILL.md",
+      "source": "personal-codex/skills/knowledge-recall/SKILL.md",
+      "kind": "self-owned source",
+      "bytes": 8041,
+      "sha256": "9b0e897eb0c376f3cc10035c0c4925756094d783ca765d2185b21ebc3a9cb072"
+    },
+    {
+      "file": "skills/outcome-collaboration/agents/openai.yaml",
+      "source": "personal-shared/skills/outcome-collaboration/agents/openai.yaml",
+      "kind": "self-owned source",
+      "bytes": 395,
+      "sha256": "d9b0882d3648e059311189a5ad7a2f1859c39350c7143af2552bfa6435e25bf6"
+    },
+    {
+      "file": "skills/outcome-collaboration/references/delegation-evidence.md",
+      "source": "personal-shared/skills/outcome-collaboration/references/delegation-evidence.md",
+      "kind": "self-owned source",
+      "bytes": 2522,
+      "sha256": "b88a258e0f440231a71ad2f51d6620ea6a5a456c71c0975211919443f66f997b"
+    },
+    {
+      "file": "skills/outcome-collaboration/references/fresh-context.md",
+      "source": "personal-shared/skills/outcome-collaboration/references/fresh-context.md",
+      "kind": "self-owned source",
+      "bytes": 2830,
+      "sha256": "e813692c600ac2a6985930f7421ff1396019dc4835b35991c41f28ea30a74830"
+    },
+    {
+      "file": "skills/outcome-collaboration/SKILL.md",
+      "source": "personal-shared/skills/outcome-collaboration/SKILL.md",
+      "kind": "self-owned source",
+      "bytes": 9432,
+      "sha256": "eb56d2c9f2d018a09f8337bb6242e59b33440be25a5a1e94cbb6b736a861f038"
+    },
+    {
+      "file": "skills/plain-writing/references/visual-reading.md",
+      "source": "personal-shared/skills/plain-writing/references/visual-reading.md",
+      "kind": "self-owned source",
+      "bytes": 4780,
+      "sha256": "7cf9ea95d496c97bbf252c8b8f6c6c5bb4fa3dc1bfbca605e3af2d607bdfe397"
+    },
+    {
+      "file": "skills/plain-writing/SKILL.md",
+      "source": "personal-shared/skills/plain-writing/SKILL.md",
+      "kind": "self-owned source",
+      "bytes": 6940,
+      "sha256": "620db4ec1eb03d82b24c5b1a27259cee4f1822aff9d211e8df85da690677d52f"
+    },
+    {
+      "file": "skills/prompt-writing/SKILL.md",
+      "source": "personal-codex/skills/prompt-writing/SKILL.md",
+      "kind": "self-owned source",
+      "bytes": 2791,
+      "sha256": "e44c4d753c02f6cf71b6d096366affe27f74b4eee0260a44c6e6bfede23f55dc"
+    },
+    {
+      "file": "skills/task-computer-use/local-adaptations/docs/confirmations.md.md",
+      "source": "personal-codex/skills/task-computer-use/docs/confirmations.md",
+      "kind": "local changes to an upstream file",
+      "bytes": 857,
+      "sha256": "02eb742500a577192475286c77b6d4b2d6608e452592723b8a643a7e23eeb5c3"
+    },
+    {
+      "file": "skills/task-computer-use/SKILL.md",
+      "source": "personal-codex/skills/task-computer-use/SKILL.md",
+      "kind": "local additions, unchanged upstream omitted",
+      "bytes": 3095,
+      "sha256": "39a2e3604da5b7abccfecc33e744e9092fb4215b8d305629cef93b319552cc9a"
+    },
+    {
+      "file": "skills/task-computer-use/UPSTREAM.md",
+      "source": "personal-codex/plugins/cache/openai-bundled/computer-use/26.930.61225/skills/computer-use",
+      "kind": "upstream provenance notice",
+      "bytes": 1319,
+      "sha256": "9f0f1623f97bd946ba92f30a0fc2b2e8cc1f7f035e3f440180f8ece5b444227d"
+    },
+    {
+      "file": "skills/task-drive-comments/SKILL.md",
+      "source": "personal-codex/skills/task-drive-comments/SKILL.md",
+      "kind": "local additions, unchanged upstream omitted",
+      "bytes": 837,
+      "sha256": "4b98ac2bdabd247d0bba7bddbd0fd0fe61fefbd0bb9235b6a0d44e69c0c8520e"
+    },
+    {
+      "file": "skills/task-drive-comments/UPSTREAM.md",
+      "source": "personal-codex/plugins/cache/openai-curated-remote/google-drive/0.1.16/skills/google-drive-comments",
+      "kind": "upstream provenance notice",
+      "bytes": 1329,
+      "sha256": "a88618a682281ed95a0bcb51e31deb1ad7e7d1c93a68b7964caf13ee6dbb8899"
+    },
+    {
+      "file": "skills/task-google-docs/SKILL.md",
+      "source": "personal-codex/skills/task-google-docs/SKILL.md",
+      "kind": "local additions, unchanged upstream omitted",
+      "bytes": 1969,
+      "sha256": "f18931c3ecc20ebd1bb6d98acb154cf291b32ba2e9ee66480df745437746b77c"
+    },
+    {
+      "file": "skills/task-google-docs/UPSTREAM.md",
+      "source": "personal-codex/plugins/cache/openai-curated-remote/google-drive/0.1.16/skills/google-docs",
+      "kind": "upstream provenance notice",
+      "bytes": 1319,
+      "sha256": "40ee2c910d9a97c662d966a7f6b1297e7026c9ce6269860d4c47f0b97c8294ba"
+    },
+    {
+      "file": "skills/task-google-drive/local-adaptations/references/slides/chart-refresh-workflows.md.md",
+      "source": "personal-codex/skills/task-google-drive/references/slides/chart-refresh-workflows.md",
+      "kind": "local changes to an upstream file",
+      "bytes": 641,
+      "sha256": "f6170d454fd573d3fe9b928c56dc1a1975298f4b00d99048e862abf6e3813d16"
+    },
+    {
+      "file": "skills/task-google-drive/local-adaptations/references/slides/sheets-chart-replacement.md.md",
+      "source": "personal-codex/skills/task-google-drive/references/slides/sheets-chart-replacement.md",
+      "kind": "local changes to an upstream file",
+      "bytes": 422,
+      "sha256": "f72b648f8fbf6c11c948a02fc7356c1accb62db2ead0cd22d3118a77fef0e634"
+    },
+    {
+      "file": "skills/task-google-drive/local-adaptations/references/slides/visual-change-loop.md.md",
+      "source": "personal-codex/skills/task-google-drive/references/slides/visual-change-loop.md",
+      "kind": "local changes to an upstream file",
+      "bytes": 667,
+      "sha256": "bee8bc5452ed045242c598f9272ab6067c073ee52d40d38abb0632344ebb0ca4"
+    },
+    {
+      "file": "skills/task-google-drive/SKILL.md",
+      "source": "personal-codex/skills/task-google-drive/SKILL.md",
+      "kind": "local additions, unchanged upstream omitted",
+      "bytes": 2365,
+      "sha256": "9701f33b4528d3a410077a52c8cbc1f28a1ef32c723fa2141fda57ea7fcd8840"
+    },
+    {
+      "file": "skills/task-google-drive/UPSTREAM.md",
+      "source": "personal-codex/plugins/cache/openai-curated-remote/google-drive/0.1.16/skills/google-drive",
+      "kind": "upstream provenance notice",
+      "bytes": 1320,
+      "sha256": "db0a0dc45deb9a10977d8318b2977ef0a8f48ff7e7108cb05f3617ac6e80c421"
+    },
+    {
+      "file": "skills/task-google-sheets/SKILL.md",
+      "source": "personal-codex/skills/task-google-sheets/SKILL.md",
+      "kind": "local additions, unchanged upstream omitted",
+      "bytes": 2679,
+      "sha256": "281c654db0193cea82092a15b0a957447721273d493c198e6212739269577a58"
+    },
+    {
+      "file": "skills/task-google-sheets/UPSTREAM.md",
+      "source": "personal-codex/plugins/cache/openai-curated-remote/google-drive/0.1.16/skills/google-sheets",
+      "kind": "upstream provenance notice",
+      "bytes": 1321,
+      "sha256": "adc79eebbb6b0e44cf03d854773406d7b26b3ad1495a978d268bf3c5e6ee2e33"
+    },
+    {
+      "file": "skills/task-google-slides/SKILL.md",
+      "source": "personal-codex/skills/task-google-slides/SKILL.md",
+      "kind": "local additions, unchanged upstream omitted",
+      "bytes": 1079,
+      "sha256": "d35d8c746a6d5503294551e3a784637bff3fbc7d552e42961e2dbfb069916105"
+    },
+    {
+      "file": "skills/task-google-slides/UPSTREAM.md",
+      "source": "personal-codex/plugins/cache/openai-curated-remote/google-drive/0.1.16/skills/google-slides",
+      "kind": "upstream provenance notice",
+      "bytes": 1321,
+      "sha256": "5d556a77a6177f811abe2c1041784b65ea2bf90be24881219960f78e5add4e71"
+    },
+    {
+      "file": "skills/task-openai-guidance/SKILL.md",
+      "source": "personal-codex/skills/task-openai-guidance/SKILL.md",
+      "kind": "self-owned source",
+      "bytes": 1587,
+      "sha256": "39e0ffbe705b2ea838f07513467a0317d22960a854f9ebbcc65961993fe572c8"
+    },
+    {
+      "file": "skills/task-page-writing/local-adaptations/references/page-content.md.md",
+      "source": "personal-codex/skills/task-page-writing/references/page-content.md",
+      "kind": "local changes to an upstream file",
+      "bytes": 1120,
+      "sha256": "24027b1f91a8add0b02b861a745918e1083ba9d21b8019bb7dd7584b1d1a0d28"
+    },
+    {
+      "file": "skills/task-page-writing/local-adaptations/writing_quality.md.md",
+      "source": "personal-codex/skills/task-page-writing/writing_quality.md",
+      "kind": "local changes to an upstream file",
+      "bytes": 698,
+      "sha256": "f839a2e612d89fb7ebe89f000c61dac5226965e6db951b6ded7a4405ea0b6d3c"
+    },
+    {
+      "file": "skills/task-page-writing/SKILL.md",
+      "source": "personal-codex/skills/task-page-writing/SKILL.md",
+      "kind": "local additions, unchanged upstream omitted",
+      "bytes": 3669,
+      "sha256": "ee91433228fbedc5bb376cb0e328dae9a5142fbf8c3634426b83a8a673dd3874"
+    },
+    {
+      "file": "skills/task-page-writing/UPSTREAM.md",
+      "source": "personal-codex/plugins/cache/openai-curated-remote/pages/0.1.20/skills/write-page",
+      "kind": "upstream provenance notice",
+      "bytes": 1311,
+      "sha256": "7217ee773fc263d3783575d70f3f1cb0cee7c2031e8445429acd83a289b51ae4"
+    },
+    {
+      "file": "skills/task-pdf/SKILL.md",
+      "source": "personal-codex/skills/task-pdf/SKILL.md",
+      "kind": "local additions, unchanged upstream omitted",
+      "bytes": 1217,
+      "sha256": "3aa4f972699b1db2ef8aaca7dfc86ba871c03c30c189a2f2ef7dbdb08bbabfe1"
+    },
+    {
+      "file": "skills/task-pdf/UPSTREAM.md",
+      "source": "personal-codex/plugins/cache/openai-primary-runtime/pdf/26.921.10847/skills/pdf",
+      "kind": "upstream provenance notice",
+      "bytes": 1309,
+      "sha256": "81026238bd9912e9bdd088cfec231e59872d7474d1e431c317e9fcd4904e3609"
+    },
+    {
+      "file": "skills/task-presentations/local-adaptations/references/clarification-questions.md.md",
+      "source": "personal-codex/skills/task-presentations/references/clarification-questions.md",
+      "kind": "local changes to an upstream file",
+      "bytes": 579,
+      "sha256": "e4f8ab7da0c9848333ffd934519df8d5cb8d977291cb54c6c9ac04357e0055f4"
+    },
+    {
+      "file": "skills/task-presentations/local-adaptations/references/template-elicitation.md.md",
+      "source": "personal-codex/skills/task-presentations/references/template-elicitation.md",
+      "kind": "local changes to an upstream file",
+      "bytes": 491,
+      "sha256": "023c6b9f0d6ca6a092968e85fb5564dad99dae06d4d4351ecd76328e2c80024a"
+    },
+    {
+      "file": "skills/task-presentations/SKILL.md",
+      "source": "personal-codex/skills/task-presentations/SKILL.md",
+      "kind": "local additions, unchanged upstream omitted",
+      "bytes": 903,
+      "sha256": "4e741aa0cb296b945e32d0d3f7aaef56c9437a1dbb2bb85943c18d773e2744db"
+    },
+    {
+      "file": "skills/task-presentations/UPSTREAM.md",
+      "source": "personal-codex/plugins/cache/openai-primary-runtime/presentations/26.921.10847/skills/presentations",
+      "kind": "upstream provenance notice",
+      "bytes": 1329,
+      "sha256": "6de75bd6eb1d14757c479528f7b7fe708f49f81fad42f01f3bfac1f57296c3b7"
+    },
+    {
+      "file": "skills/task-skill-installer/SKILL.md",
+      "source": "personal-codex/skills/task-skill-installer/SKILL.md",
+      "kind": "local installer adaptation",
+      "bytes": 706,
+      "sha256": "f730dabbd49155cca8ebcc0daffe9f92f74678a603eb06bde9e493d7a8351d24"
+    },
+    {
+      "file": "skills/task-skill-installer/UPSTREAM.md",
+      "source": "personal-codex/skills/task-skill-installer/LICENSE.txt",
+      "kind": "local installer adaptation",
+      "bytes": 708,
+      "sha256": "dfd93edce2765028665904c429e8a55243841c6e1e515005e6d99835182ba805"
+    },
+    {
+      "file": "skills/task-spreadsheets/local-adaptations/references/clarification-questions.md.md",
+      "source": "personal-codex/skills/task-spreadsheets/references/clarification-questions.md",
+      "kind": "local changes to an upstream file",
+      "bytes": 579,
+      "sha256": "e4f8ab7da0c9848333ffd934519df8d5cb8d977291cb54c6c9ac04357e0055f4"
+    },
+    {
+      "file": "skills/task-spreadsheets/SKILL.md",
+      "source": "personal-codex/skills/task-spreadsheets/SKILL.md",
+      "kind": "local additions, unchanged upstream omitted",
+      "bytes": 1244,
+      "sha256": "e09b72418a44da352fddf41f97fca2f2b457e85b250b609f08e9dd0063852759"
+    },
+    {
+      "file": "skills/task-spreadsheets/UPSTREAM.md",
+      "source": "personal-codex/plugins/cache/openai-primary-runtime/spreadsheets/26.921.10847/skills/spreadsheets",
+      "kind": "upstream provenance notice",
+      "bytes": 1327,
+      "sha256": "90bd8503ffb26ca0587b0ae6466668a07e52d10e1a141d9cd76fee482a2b9f29"
+    },
+    {
+      "file": "skills/task-template-creator/SKILL.md",
+      "source": "personal-codex/skills/task-template-creator/SKILL.md",
+      "kind": "local additions, unchanged upstream omitted",
+      "bytes": 2036,
+      "sha256": "6bbd45a0d781085e38d24a85f92222b7c5127ced0628c33191c6fe0cd0b74c6f"
+    },
+    {
+      "file": "skills/task-template-creator/UPSTREAM.md",
+      "source": "personal-codex/plugins/cache/openai-primary-runtime/template-creator/26.921.10847/skills/template-creator",
+      "kind": "upstream provenance notice",
+      "bytes": 1335,
+      "sha256": "2c501439271ebf1bfeb8bdc3840e15abb4e7db7c44b3bd435367a2d731691565"
+    },
+    {
+      "file": "skills/task-visualize/SKILL.md",
+      "source": "personal-codex/skills/task-visualize/SKILL.md",
+      "kind": "local additions, unchanged upstream omitted",
+      "bytes": 1827,
+      "sha256": "a628b6b550eaeafef5f9fde4a707cd2b41207ef29246a6572139396bce1a45eb"
+    },
+    {
+      "file": "skills/task-visualize/UPSTREAM.md",
+      "source": "personal-codex/plugins/cache/openai-bundled/visualize/1.0.46/skills/visualize",
+      "kind": "upstream provenance notice",
+      "bytes": 1307,
+      "sha256": "0f266d110fa7de39cc92cd6391cf9465d942d6c5c3cdf59fd6a7719aa93be2de"
+    },
+    {
+      "file": "integrations/agents/claude/architect.md",
+      "source": "personal-claude/agents/architect.md",
+      "kind": "self-owned source",
+      "bytes": 1532,
+      "sha256": "4d7a04f9f959263bc95ba60e5b4b230c8e93159a52665fbf1236648c24e78b1e"
+    },
+    {
+      "file": "integrations/agents/claude/feasibility-judge.md",
+      "source": "personal-claude/agents/feasibility-judge.md",
+      "kind": "self-owned source",
+      "bytes": 2981,
+      "sha256": "7eebba086e222eaab3e68c97fae56ed09ac1d99cd22113bf68abac9236cab017"
+    },
+    {
+      "file": "integrations/agents/claude/general-purpose.md",
+      "source": "personal-claude/agents/general-purpose.md",
+      "kind": "self-owned source",
+      "bytes": 1263,
+      "sha256": "e950ff120438853214405174f8a2fedb453d242cc8066f1f11c42495f3bc860d"
+    },
+    {
+      "file": "integrations/agents/claude/implementation-worker.md",
+      "source": "personal-claude/agents/implementation-worker.md",
+      "kind": "self-owned source",
+      "bytes": 1560,
+      "sha256": "663bdb1d12d6126a6b0723a853b7e99e96056067371057235f793c5896231b58"
+    },
+    {
+      "file": "integrations/agents/claude/knowledge-writer.md",
+      "source": "personal-claude/agents/knowledge-writer.md",
+      "kind": "self-owned source",
+      "bytes": 1540,
+      "sha256": "8d38bc55b395ecfd64a6332bbd1634e51816607478997a88271b5b6fce96edd6"
+    },
+    {
+      "file": "integrations/agents/claude/module-builder.md",
+      "source": "personal-claude/agents/module-builder.md",
+      "kind": "self-owned source",
+      "bytes": 1955,
+      "sha256": "b66e477b315ed527610b09707e10b8afe0053d38d7942b73e0698c0d6410d91a"
+    },
+    {
+      "file": "integrations/agents/claude/proposal-reviewer.md",
+      "source": "personal-claude/agents/proposal-reviewer.md",
+      "kind": "self-owned source",
+      "bytes": 1723,
+      "sha256": "9fc031eb2b786964208f35b27b45beb352e2e5646113a50596942ff3aa61c194"
+    },
+    {
+      "file": "integrations/agents/codex/architect.toml",
+      "source": "personal-codex/agents/architect.toml",
+      "kind": "self-owned source",
+      "bytes": 1470,
+      "sha256": "fd2626d7223422299b55fb5a7d7875472eab92044705a289fad1b163039e82fa"
+    },
+    {
+      "file": "integrations/agents/codex/feasibility_judge.toml",
+      "source": "personal-codex/agents/feasibility_judge.toml",
+      "kind": "self-owned source",
+      "bytes": 3888,
+      "sha256": "8dfe4d7741af4c6725b5974b5edabf2be2588f9d7adf97f1254f15f9c5b40658"
+    },
+    {
+      "file": "integrations/agents/codex/implementation_worker.toml",
+      "source": "personal-codex/agents/implementation_worker.toml",
+      "kind": "self-owned source",
+      "bytes": 1643,
+      "sha256": "217343f02de2a965deb4f46056aaf8bbe332430aa0fc3abf2db22cdba4b3b232"
+    },
+    {
+      "file": "integrations/agents/codex/knowledge_writer.toml",
+      "source": "personal-codex/agents/knowledge_writer.toml",
+      "kind": "self-owned source",
+      "bytes": 1504,
+      "sha256": "db6a12142b5e4070291868ede7f90e3c49453664c9c726d43663ef32a5bd7120"
+    },
+    {
+      "file": "integrations/agents/codex/module_builder.toml",
+      "source": "personal-codex/agents/module_builder.toml",
+      "kind": "self-owned source",
+      "bytes": 2442,
+      "sha256": "406a451b4740139c3333faf70e10807a9fdf40d8d8dd5ce3812c3f58d3c325fc"
+    },
+    {
+      "file": "integrations/agents/codex/proposal_reviewer.toml",
+      "source": "personal-codex/agents/proposal_reviewer.toml",
+      "kind": "self-owned source",
+      "bytes": 1819,
+      "sha256": "cd40d055e8199e4fa3b309fcdcdee0d6701967816cc7e5c9d220495dbde643c0"
+    },
+    {
+      "file": "integrations/AGENTS.md",
+      "source": "public adaptation/documentation",
+      "kind": "public support documentation/example",
+      "bytes": 1198,
+      "sha256": "e1a76cf1456dd54ca139ac44b5d4fbd14d680d6d4be5ea27813b1fc9701cca32"
+    },
+    {
+      "file": "integrations/context/action-boundaries.example.json",
+      "source": "public adaptation/documentation",
+      "kind": "empty policy example",
+      "bytes": 33,
+      "sha256": "5bcfaa8e8b961a8e48501da1b1ef39839e98a16eaca42f194a45d1b1eea69037"
+    },
+    {
+      "file": "integrations/context/deliverables.mjs",
+      "source": "personal-codex/context/deliverables.mjs",
+      "kind": "delegates to adapted public core",
+      "bytes": 513,
+      "sha256": "6aadb5870bcd663d0db5bc7036e1336afbb8195b3acc9dbcf6627b75e11cf83d"
+    },
+    {
+      "file": "integrations/context/failure-inbox.mjs",
+      "source": "personal-codex/context/failure-inbox.mjs",
+      "kind": "self-owned source",
+      "bytes": 14163,
+      "sha256": "4c49f060f9faa07fcc78420baeeb1810d6f6743e1b5add02c4a7ea7fb2c99f94"
+    },
+    {
+      "file": "integrations/context/knowledge-lifecycle.mjs",
+      "source": "personal-codex/context/knowledge-lifecycle.mjs",
+      "kind": "delegates to adapted public core",
+      "bytes": 527,
+      "sha256": "ca57e06cb6780b4897866577fda3283281e9ad52a8c6715ff2d33cdd1cdbc89e"
+    },
+    {
+      "file": "integrations/context/knowledge-record.mjs",
+      "source": "personal-codex/context/knowledge-record.mjs",
+      "kind": "delegates to adapted public core",
+      "bytes": 521,
+      "sha256": "b59c33da00c0561c52ae09a1b3c158cce3d140a5c20bcdd2f93cb4b8e83d103c"
+    },
+    {
+      "file": "integrations/context/knowledge.mjs",
+      "source": "personal-codex/context/knowledge.mjs",
+      "kind": "delegates to adapted public core",
+      "bytes": 507,
+      "sha256": "39ef6ed3058f8f46acf1d8b13086b3101ce3aac609b567926d4021c404c5d739"
+    },
+    {
+      "file": "integrations/context/local-navigation.mjs",
+      "source": "personal-codex/context/local-navigation.mjs",
+      "kind": "self-owned source",
+      "bytes": 5964,
+      "sha256": "9ce3e146d0ed5478b037c5ad69abfab40f53fd5df9b586cc20f9c8292c3a8b96"
+    },
+    {
+      "file": "integrations/context/maintenance.example.json",
+      "source": "public adaptation/documentation",
+      "kind": "public support documentation/example",
+      "bytes": 101,
+      "sha256": "33ba1fa62d55ea170589d2f01efef3dea00b0ad46e8f1b6430359dec076645ed"
+    },
+    {
+      "file": "integrations/context/methods.mjs",
+      "source": "personal-codex/context/methods.mjs",
+      "kind": "self-owned source",
+      "bytes": 557,
+      "sha256": "8eb1329dff0a65e6257c7c9c60af023412b84476199d3eef63c2286b0b98bf4e"
+    },
+    {
+      "file": "integrations/context/object-access.mjs",
+      "source": "personal-codex/context/object-access.mjs",
+      "kind": "self-owned source",
+      "bytes": 1894,
+      "sha256": "c02530fef23a44b4ee70db4c4442d290edc66bd96a2a097eabb16b2a6d3c4711"
+    },
+    {
+      "file": "integrations/context/objects.mjs",
+      "source": "personal-codex/context/objects.mjs",
+      "kind": "self-owned source",
+      "bytes": 1360,
+      "sha256": "d8c934908dca7cd1b9076b094fb60c49e5d5f919b646dd8ecef5286225de1a1a"
+    },
+    {
+      "file": "integrations/context/project-context.mjs",
+      "source": "personal-codex/context/project-context.mjs",
+      "kind": "delegates to adapted public core",
+      "bytes": 519,
+      "sha256": "54896e6be77d2012eca78f1d0b6200388d19598ad131ad4ba7adf4d2f3ebbb84"
+    },
+    {
+      "file": "integrations/context/recall.mjs",
+      "source": "personal-codex/context/recall.mjs",
+      "kind": "complete adapted system recall implementation",
+      "bytes": 23138,
+      "sha256": "4938979aed1817d89e71dd8d8f4772c4fd25e40a28f4b922f882118725c78c5c"
+    },
+    {
+      "file": "integrations/context/resources.mjs",
+      "source": "personal-codex/context/resources.mjs",
+      "kind": "self-owned source",
+      "bytes": 18979,
+      "sha256": "1a036e8603e80805dfbb58528412eff57f09c72a8bd56974b61b6da7aff28da5"
+    },
+    {
+      "file": "integrations/context/shared-state.mjs",
+      "source": "personal-codex/context/shared-state.mjs",
+      "kind": "delegates to adapted public core",
+      "bytes": 513,
+      "sha256": "55edf32d695339a0e7d6fb54bb1ea54e0731f502e11a83d70c1e48a404d1f378"
+    },
+    {
+      "file": "integrations/context/system-maintenance.mjs",
+      "source": "personal-codex/context/system-maintenance.mjs",
+      "kind": "self-owned source",
+      "bytes": 17769,
+      "sha256": "7b5d8cfcf99a226e4e10e5dcdf5409c1d8758c971b3143965c51660254299de4"
+    },
+    {
+      "file": "integrations/context/task-reports.mjs",
+      "source": "personal-codex/context/task-reports.mjs",
+      "kind": "self-owned source",
+      "bytes": 14624,
+      "sha256": "2f364df6b2404bc04c05065fcb523a8b34adbe67faefee5118780d5ee2cd531e"
+    },
+    {
+      "file": "integrations/context/task-summary.mjs",
+      "source": "personal-codex/context/task-summary.mjs",
+      "kind": "self-owned source",
+      "bytes": 2236,
+      "sha256": "56f02ec8564630b28f1f8f23f263aa3d34c9c9079fa933cdbc8d2be598668083"
+    },
+    {
+      "file": "integrations/context/workspace.mjs",
+      "source": "personal-codex/context/workspace.mjs",
+      "kind": "self-owned source",
+      "bytes": 256,
+      "sha256": "0bdb5d0006228fd172615bef363bd5d5678a5897fad9177292fb3f5f1a418591"
+    },
+    {
+      "file": "integrations/hooks/action-boundary.mjs",
+      "source": "personal-codex/hooks/action-boundary.mjs",
+      "kind": "self-owned source",
+      "bytes": 6454,
+      "sha256": "6fbdca660e87e463250368cde2c54765aac53186eecafb7c22474ad13381a32c"
+    },
+    {
+      "file": "integrations/hooks/adapter-input.example.json",
+      "source": "public adaptation/documentation",
+      "kind": "public support documentation/example",
+      "bytes": 195,
+      "sha256": "72ea144bd92a6eba00e5cbdfce035ba2593059774387776b151d9e55c717e439"
+    },
+    {
+      "file": "integrations/hooks/agent-memory.mjs",
+      "source": "personal-codex/hooks/agent-memory.mjs",
+      "kind": "self-owned source",
+      "bytes": 5872,
+      "sha256": "cd2db7adb1859bf9af9e117a4faa9562ec08c14f9f45f5b154624ded368837b2"
+    },
+    {
+      "file": "integrations/hooks/context-budget.mjs",
+      "source": "personal-codex/hooks/context-budget.mjs",
+      "kind": "self-owned source",
+      "bytes": 3142,
+      "sha256": "c14dd2fd0cb783e5b062164ad6bf0dab8bfae15012313857a88796379618bb39"
+    },
+    {
+      "file": "integrations/hooks/goal-continuity.mjs",
+      "source": "personal-codex/hooks/goal-continuity.mjs",
+      "kind": "self-owned source",
+      "bytes": 8044,
+      "sha256": "0d93a01f3cc712a0010914911f94d166a265085a66450944c7d549c8c0e20a84"
+    },
+    {
+      "file": "integrations/hooks/information-note.mjs",
+      "source": "personal-codex/hooks/information-note.mjs",
+      "kind": "self-owned source",
+      "bytes": 10112,
+      "sha256": "90146d1e29d6bcdfcb71803ae492975da4fa809c82768d2d39cb57582fc22c16"
+    },
+    {
+      "file": "integrations/hooks/information-recipients.example.json",
+      "source": "public adaptation/documentation",
+      "kind": "configuration example, no recipients",
+      "bytes": 54,
+      "sha256": "b283ba0f00ba433902535533d48c8d89729bd8ad07c4595b39319057ea3485c0"
+    },
+    {
+      "file": "integrations/hooks/intent-check.mjs",
+      "source": "personal-codex/hooks/intent-check.mjs",
+      "kind": "self-owned source",
+      "bytes": 36973,
+      "sha256": "e309dee1dfc8c39f709dd8326bb0c470c0f4154e496d5a7cdbb1b4ca6c3a5dec"
+    },
+    {
+      "file": "integrations/hooks/knowledge-note.mjs",
+      "source": "personal-codex/hooks/knowledge-note.mjs",
+      "kind": "self-owned source",
+      "bytes": 12839,
+      "sha256": "89b43d0611a45d1c4cb6adf8720a6dc0f27b950c7fa6c1eef5f25439d36c5f97"
+    },
+    {
+      "file": "integrations/hooks/recall-note.mjs",
+      "source": "personal-codex/hooks/recall-note.mjs",
+      "kind": "self-owned source",
+      "bytes": 5346,
+      "sha256": "95615a0184f1e9b036344dbeb903c2f2f31f0ae884fa03734a138923a1b99a11"
+    },
+    {
+      "file": "integrations/hooks/research-packet.mjs",
+      "source": "personal-codex/hooks/research-packet.mjs",
+      "kind": "self-owned source",
+      "bytes": 13932,
+      "sha256": "8df8358ec3876c7db4a03427189960a8d3d0577643640a221f9b93d965b03d2e"
+    },
+    {
+      "file": "integrations/hooks/resource-note.mjs",
+      "source": "personal-codex/hooks/resource-note.mjs",
+      "kind": "self-owned source",
+      "bytes": 4152,
+      "sha256": "810190e402178e959dda9217d100b5176ad97a771d59da193f4b84fe61a0374b"
+    },
+    {
+      "file": "integrations/hooks/task-retrieval-context.mjs",
+      "source": "personal-codex/hooks/task-retrieval-context.mjs",
+      "kind": "self-owned source",
+      "bytes": 7501,
+      "sha256": "4cfd7b86e20010912d5bf85e273d95bb8a29498a5e4e6babba543942e88fda56"
+    },
+    {
+      "file": "integrations/hooks/task-window-note.mjs",
+      "source": "personal-codex/hooks/task-window-note.mjs",
+      "kind": "self-owned source",
+      "bytes": 3796,
+      "sha256": "585ef741ed7e0b4a9179e82564930e9fe2a6834faa230e606d8e90300568b725"
+    },
+    {
+      "file": "integrations/hooks/work-note.mjs",
+      "source": "personal-codex/hooks/work-note.mjs",
+      "kind": "self-owned source",
+      "bytes": 10095,
+      "sha256": "b21fe104d6432c618f9923e7a1d060da5d43c7610f4f7d1f8442f4f55532510b"
+    },
+    {
+      "file": "integrations/paths.mjs",
+      "source": "public adaptation/documentation",
+      "kind": "public adaptation",
+      "bytes": 1304,
+      "sha256": "6e9335ab22380a4eb4bf732985b7237cf90f63c7c44f6302b1bd80a22a5f2b19"
+    },
+    {
+      "file": "integrations/pi/extensions/pi-capabilities.js",
+      "source": "legacy-pi/agent/extensions/pi-capabilities.js",
+      "kind": "adapted loader",
+      "bytes": 57,
+      "sha256": "43020396a4a3b99b9f0ab423ecff60e25e6212b086e29f4ab082d9f308320a89"
+    },
+    {
+      "file": "integrations/pi/extensions/pi-gpt6-fast.js",
+      "source": "legacy-pi/agent/extensions/pi-gpt6-fast.js",
+      "kind": "self-owned source",
+      "bytes": 2051,
+      "sha256": "c588e09e58f6121982f600ea7b2f077f020bcc4710c4c53ec39e4a3082d2e236"
+    },
+    {
+      "file": "integrations/pi/README.md",
+      "source": "public adaptation/documentation",
+      "kind": "public support documentation/example",
+      "bytes": 1409,
+      "sha256": "a8638dea9ade5defebfa42e8770f0913ab86050ef5e41109f8c7aad7aebda0df"
+    },
+    {
+      "file": "integrations/pi/runtime/capability-loader.js",
+      "source": "legacy-pi-workbench/runtime/capability-loader.js",
+      "kind": "self-owned source",
+      "bytes": 12598,
+      "sha256": "0c009b8a4296e7bb2ffe374748729f75b537fa32323f93bf6c33857ff5bc23b3"
+    },
+    {
+      "file": "integrations/pi/skills/adaptive-research/evidence-template.md",
+      "source": "legacy-pi/agent/skills/adaptive-research/evidence-template.md",
+      "kind": "legacy Pi-owned rules; historical host assumptions",
+      "bytes": 425,
+      "sha256": "51d496893440a1faed7458d1fbea06130ad5cf68c9e39b9afd56bbb0c8fdb351"
+    },
+    {
+      "file": "integrations/pi/skills/adaptive-research/SKILL.md",
+      "source": "legacy-pi/agent/skills/adaptive-research/SKILL.md",
+      "kind": "legacy Pi-owned rules; historical host assumptions",
+      "bytes": 3573,
+      "sha256": "afcd185bec05d53c6ddbed2c04e8db07ce460c85e90a60732c951ecdbb0a9452"
+    },
+    {
+      "file": "integrations/pi/skills/adaptive-workflow/references/control-loop.md",
+      "source": "legacy-pi/agent/skills/adaptive-workflow/references/control-loop.md",
+      "kind": "legacy Pi-owned rules; historical host assumptions",
+      "bytes": 2725,
+      "sha256": "9fc64bb46a54aa441f049cf74e820d8809fd02390447672ea7ba8f15a5790339"
+    },
+    {
+      "file": "integrations/pi/skills/adaptive-workflow/references/model-capability-calibration.md",
+      "source": "legacy-pi/agent/skills/adaptive-workflow/references/model-capability-calibration.md",
+      "kind": "legacy Pi-owned rules; historical host assumptions",
+      "bytes": 4922,
+      "sha256": "915a4856e674842963121f914c819142c3620a57e3e69d1823810eca2ce3fa68"
+    },
+    {
+      "file": "integrations/pi/skills/adaptive-workflow/references/understanding-delivery.md",
+      "source": "legacy-pi/agent/skills/adaptive-workflow/references/understanding-delivery.md",
+      "kind": "legacy Pi-owned rules; historical host assumptions",
+      "bytes": 1941,
+      "sha256": "9cd421319d705827308fc11982708f8629b9ac478ec7ca38f3abccbd31520163"
+    },
+    {
+      "file": "integrations/pi/skills/adaptive-workflow/SKILL.md",
+      "source": "legacy-pi/agent/skills/adaptive-workflow/SKILL.md",
+      "kind": "legacy Pi-owned rules; historical host assumptions",
+      "bytes": 4898,
+      "sha256": "6e4dbf6dc8d4d9e5043156c3f13e266d5185dc55d6565cbd8e81e690e8479c00"
+    },
+    {
+      "file": "integrations/pi/skills/problem-solving/SKILL.md",
+      "source": "legacy-pi/agent/skills/problem-solving/SKILL.md",
+      "kind": "legacy Pi-owned rules; historical host assumptions",
+      "bytes": 1902,
+      "sha256": "15da96c23d1f889303506799d7924ea1e85f22338ceade34b31181af6ae9aa54"
+    },
+    {
+      "file": "integrations/plugins/codex-swarm/.codex-plugin/plugin.json",
+      "source": "personal-codex/plugins/cache/personal/codex-swarm/0.1.0+codex.20260922204444/.codex-plugin/plugin.json",
+      "kind": "self-owned source",
+      "bytes": 630,
+      "sha256": "4380d9cd8aab8f2eca421cb1b3c68ab4c14ad8fe91ea5ac274edd76fcf90acc4"
+    },
+    {
+      "file": "integrations/plugins/codex-swarm/skills/swarm/agents/openai.yaml",
+      "source": "personal-codex/plugins/cache/personal/codex-swarm/0.1.0+codex.20260922204444/skills/swarm/agents/openai.yaml",
+      "kind": "self-owned source",
+      "bytes": 274,
+      "sha256": "076cb7cecc81f16a9dc840a2653cce93fe5ae4c111068b10b57910332724ba0a"
+    },
+    {
+      "file": "integrations/plugins/codex-swarm/skills/swarm/SKILL.md",
+      "source": "personal-codex/plugins/cache/personal/codex-swarm/0.1.0+codex.20260922204444/skills/swarm/SKILL.md",
+      "kind": "self-owned source",
+      "bytes": 1074,
+      "sha256": "0c8127449e11acae1d18a56ff000547a47ac0afd66457edee8e2cfa309085169"
+    },
+    {
+      "file": "integrations/prompts/compact.md",
+      "source": "personal-codex/prompts/compact.md",
+      "kind": "self-owned source",
+      "bytes": 1124,
+      "sha256": "e201224d1894259f02610ed2edaebab21c3c7ca9df770fc712d79c08a65f1b11"
+    },
+    {
+      "file": "integrations/prompts/project-state.md",
+      "source": "personal-codex/prompts/project-state.md",
+      "kind": "self-owned source",
+      "bytes": 10590,
+      "sha256": "f891b15b352e9f436af8d7275c3d3c7bf0e41071ec52243a018bde330bbd6b0e"
+    },
+    {
+      "file": "tools/local-html-preview.mjs",
+      "source": "personal-codex/tools/local-html-preview.mjs",
+      "kind": "self-owned source",
+      "bytes": 7104,
+      "sha256": "c6cae096b3640577778ff689131ed91b556162aac3201f2c688942610cfee208"
+    },
+    {
+      "file": "tools/model-clients/README.md",
+      "source": "public adaptation/documentation",
+      "kind": "inventory result",
+      "bytes": 429,
+      "sha256": "7e31f7a3bf850e6079495bbab83840e132ecbc7933cb052a472922987a9fcb1a"
+    },
+    {
+      "file": "tools/python-support/README.md",
+      "source": "public adaptation/documentation",
+      "kind": "public usage",
+      "bytes": 557,
+      "sha256": "6b5155b4b7d5fe1b341c68591ea4131bc16d4db1db248503656c6d01359f0dd2"
+    },
+    {
+      "file": "tools/python-support/requirements.txt",
+      "source": "personal-codex/tools/python-support/requirements.txt",
+      "kind": "self-owned source",
+      "bytes": 30,
+      "sha256": "162a9cc2f2a932889a3274e636392ec7eb412d98434eb3a49521899c399fd529"
+    },
+    {
+      "file": "docs/skills-and-hosts.md",
+      "source": "public adaptation/documentation",
+      "kind": "public support documentation/example",
+      "bytes": 8337,
+      "sha256": "48464ab6739168c19d653e5b93b928396cda21e1fa15986133cf83015651ad24"
+    }
+  ]
+}
