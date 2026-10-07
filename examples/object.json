@@ -1,0 +1,10 @@
+{
+  "id": "local-text-index",
+  "kind": "object",
+  "name": "本地文本索引（示例）",
+  "summary": "把已登记的文本转成可检索条目，帮助定位原件。",
+  "categories": ["category:retrieval"],
+  "claims": [{"key":"职责","value":"定位材料，不代替判断适用性","condition":"只读取明确登记的工作区资料"}],
+  "unknowns": ["具体任务中的召回质量"],
+  "sourceRefs": ["examples/object.json（虚构结构示例）"]
+}

@@ -1,0 +1,22 @@
+# User workspaces and generated material
+workspace/
+workspaces/
+.cache/
+**/.cache/
+node_modules/
+*.sqlite
+*.sqlite-*
+*.db
+*.log
+*.tmp
+*.lock
+*.zip
+# Credentials and personal host configuration
+.env
+.env.*
+credentials.json
+auth.json
+cookies.json
+settings.local.json
+.DS_Store
+Thumbs.db
