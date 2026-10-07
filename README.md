@@ -31,18 +31,7 @@ This system stores the long-term objective, current complete task, applicable co
 
 ## From a request to a continuing body of work
 
-```mermaid
-flowchart TD
-  U[User goals, additions and corrections] --> C[Build the current task from project records]
-  C --> R[Discover sources, read originals, refine the approach]
-  R --> X[Use tools or executors to complete the work]
-  X --> A[Save artifacts, progress and continuation notes]
-  A --> F[Use the result and provide feedback]
-  F -->|Revise goals, conditions or approach| C
-  S[(Projects · Knowledge · Experience · Objects · Resources)] -->|Read current evidence| C
-  R -->|Save evidence and new understanding| S
-  A -->|Register results and applicable lessons| S
-```
+![How the work continues](assets/architecture-en.svg)
 
 The host supplies models and tools. Skills guide research and execution. Hooks obtain relevant records at host events. State modules preserve concurrent updates and actual artifacts. Follow references when deeper context is needed, instead of placing the entire history into every prompt.
 
@@ -64,7 +53,9 @@ The tools and research skill support discovery, initial interpretation, deeper r
 
 FTS5 trigram supplies local lexical search, with optional embeddings for semantic candidates. Reciprocal Rank Fusion combines the two rankings. The implementation uses `k = 60`:
 
-$$\operatorname{RRF}(d)=\sum_{i}\frac{1}{60+\operatorname{rank}_{i}(d)}$$
+```text
+RRF(d) = Σᵢ 1 / (60 + rankᵢ(d))
+```
 
 Results retain source references, locations and further-reading entry points. Similarity helps locate material; the active AI still checks whether its conditions apply. Invalid knowledge can be retired while its recovery material is retained. [Full-system recall](integrations/context/recall.mjs) · [Files and indexes](docs/en/architecture.md)
 

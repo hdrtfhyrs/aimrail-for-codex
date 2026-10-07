@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.3.1 — GitHub rendering compatibility
+
+- Replaced the landing-page diagram with original bilingual SVGs that keep the full workflow visible at repository width.
+- Rendered the RRF equation as portable text to avoid unsupported GitHub math macros.
+
+
 ## 0.3.0 — English edition and refreshed project pages
 
 - Rebuilt the English and Chinese landing pages around the system's implemented capabilities, architecture, mechanisms, workflows and source entry points.
