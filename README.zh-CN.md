@@ -1,12 +1,14 @@
-<p align="center"><img src="assets/hero-zh.svg" alt="AI Work System：持续上下文、基于来源的研究、可接续的工作" width="100%" /></p>
+<p align="center"><img src="assets/hero-zh.svg" alt="Aimrail for Codex：持续上下文、基于来源的研究、可接续的工作" width="100%" /></p>
 
 <p align="center"><a href="README.md">English</a> · <b>简体中文</b> · <a href="docs/quickstart.md">快速开始</a> · <a href="docs/architecture.md">架构</a> · <a href="docs/search-plugins.md">搜索插件</a></p>
 
-# AI Work System
+# Aimrail for Codex
 
-**让目标持续衔接，让研究有据可查，让成果能被接手。**
+**为 Codex 接上项目接续、资料研究和工具扩展。**
 
-AI Work System 是一套个人 AI 工作基础设施，将完整任务、搜索研究、知识经验、对象资源、协作执行和成果交付接到同一个长期工作过程。你可以从一个项目开始，也可以按需接入搜索 MCP、知识召回、宿主钩子、任务窗口、信息采集和运行模块。
+Aimrail for Codex 是围绕 Codex 日常工作搭建的开源扩展层，将完整任务、搜索研究、知识经验、对象资源、协作执行和成果交付接到同一个持续工作过程。你可以从一个项目开始，也可以按需接入搜索 MCP、知识召回、宿主钩子、任务窗口、信息采集和运行模块。
+
+核心是保存到文件的 Node.js CLI，Codex 钩子和技能将它接入日常工作；仓库也保留 Claude 与 Pi 的适配入口。
 
 核心约定很简单：**AI 负责理解与判断，程序负责可靠存取，文件保留可以接手的事实。** 围绕这份约定，系统提供从目标到资料、从任务到执行、从产物到经验的具体实现。
 
@@ -82,8 +84,8 @@ RRF(d) = Σᵢ 1 / (60 + rankᵢ(d))
 核心命令需要 Node.js 24+，无需先安装整套外部依赖。
 
 ```powershell
-git clone https://github.com/hdrtfhyrs/ai-work-system.git
-cd ai-work-system
+git clone https://github.com/hdrtfhyrs/aimrail-for-codex.git
+cd aimrail-for-codex
 node bin/ai-work.mjs init --workspace ./workspace --language zh-CN
 node bin/ai-work.mjs project init --workspace ./workspace --language zh-CN --name "资料整理工具" --goal "按主题整理资料，并保留可回查的出处"
 node bin/ai-work.mjs projects --workspace ./workspace
@@ -123,4 +125,4 @@ workspace/                   使用者的私有数据（Git 忽略）
 
 自有代码和文档采用 [MIT](LICENSE)，作者公开账号为 [hdrtfhyrs](https://github.com/hdrtfhyrs)。第三方依赖与官方技能保留原许可；混合技能只发布本地修订。[第三方声明](THIRD_PARTY_NOTICES.md)
 
-欢迎带着具体用途、相关源码和实际问题参与改进：[提交问题](https://github.com/hdrtfhyrs/ai-work-system/issues) · [贡献说明](CONTRIBUTING.md)。
+欢迎带着具体用途、相关源码和实际问题参与改进：[提交问题](https://github.com/hdrtfhyrs/aimrail-for-codex/issues) · [贡献说明](CONTRIBUTING.md)。

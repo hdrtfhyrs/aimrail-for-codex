@@ -61,7 +61,7 @@ function moduleRun(name,args) {
   if(child.error) throw child.error;
   process.exitCode=child.status??1;
 }
-const help=`AI Work System — file-backed project and knowledge core
+const help=`Aimrail for Codex — file-backed project and knowledge core
 
 node bin/ai-work.mjs init --workspace PATH [--language en|zh-CN]
 node bin/ai-work.mjs project init --name NAME --goal GOAL --workspace PATH [--language en|zh-CN]

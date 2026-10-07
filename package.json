@@ -1,7 +1,7 @@
 {
-  "name": "ai-work-system",
-  "version": "0.3.2",
-  "description": "Personal AI work system: file-backed context, search plugins, skills and reusable host integrations.",
+  "name": "aimrail-for-codex",
+  "version": "0.3.3",
+  "description": "Aimrail for Codex: persistent projects, source-based research, knowledge recall, skills and tool integrations.",
   "type": "module",
   "license": "MIT",
   "author": "hdrtfhyrs",
@@ -14,9 +14,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/hdrtfhyrs/ai-work-system.git"
+    "url": "https://github.com/hdrtfhyrs/aimrail-for-codex.git"
   },
   "keywords": [
+    "codex",
     "ai",
     "context",
     "memory",

@@ -129,7 +129,7 @@ node plugins/search-tools/cli.mjs search --query "知识库 实践" --engine so 
   "mcpServers": {
     "search-tools": {
       "command": "node",
-      "args": ["/absolute/path/ai-work-system/plugins/search-tools/server.mjs"],
+      "args": ["/absolute/path/aimrail-for-codex/plugins/search-tools/server.mjs"],
       "env": {
         "AI_WORK_HOME": "/absolute/path/my-workspace"
       }

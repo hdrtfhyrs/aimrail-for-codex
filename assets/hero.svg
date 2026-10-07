@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1100" height="220" viewBox="0 0 1100 220" role="img" aria-labelledby="title description">
-<title id="title">AI Work System</title><desc id="description">Keep goals, evidence and work connected.</desc>
+<title id="title">Aimrail for Codex</title><desc id="description">Persistent projects, research and tools for Codex.</desc>
 <rect width="1100" height="220" fill="#fff"/>
-<g font-family="Arial,'Microsoft YaHei',sans-serif"><text x="40" y="83" fill="#172638" font-size="50" font-weight="600">AI Work System</text><text x="40" y="129" fill="#536171" font-size="25">Keep goals, evidence and work connected.</text><text x="40" y="174" fill="#667487" font-size="18">GOALS  ·  RESEARCH  ·  KNOWLEDGE  ·  EXECUTION  ·  ARTIFACTS</text></g>
+<g font-family="Arial,'Microsoft YaHei',sans-serif"><text x="40" y="83" fill="#172638" font-size="50" font-weight="600">Aimrail for Codex</text><text x="40" y="129" fill="#536171" font-size="25">Persistent projects, research and tools for Codex.</text><text x="40" y="174" fill="#667487" font-size="18">GOALS  ·  RESEARCH  ·  KNOWLEDGE  ·  EXECUTION  ·  ARTIFACTS</text></g>
 <path d="M40 198H1060" fill="none" stroke="#d9dfe6"/>
 </svg>

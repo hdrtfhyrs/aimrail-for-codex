@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.3.3 — Aimrail for Codex
+
+- Introduced a distinct public name and Codex-centered positioning across the bilingual pages, covers, CLI title and package metadata.
+- Updated the repository name, project description and clone links; existing command paths and persisted protocol identifiers remain compatible.
+
 ## 0.3.2 — Clear connector routing in bilingual diagrams
 
 - Simplified the English and Chinese covers to plain typography, with a localized Chinese cover.

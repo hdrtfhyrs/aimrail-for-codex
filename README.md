@@ -1,12 +1,14 @@
-<p align="center"><img src="assets/hero.svg" alt="AI Work System: persistent context, grounded research and work that can continue" width="100%" /></p>
+<p align="center"><img src="assets/hero.svg" alt="Aimrail for Codex: persistent context, grounded research and work that can continue" width="100%" /></p>
 
 <p align="center"><b>English</b> · <a href="README.zh-CN.md">简体中文</a> · <a href="docs/en/quickstart.md">Quickstart</a> · <a href="docs/en/architecture.md">Architecture</a> · <a href="docs/en/search-plugins.md">Search plugins</a></p>
 
-# AI Work System
+# Aimrail for Codex
 
-**Persistent goals. Traceable research. Work another executor can continue.**
+**A project, research and tool layer for Codex. Work that can continue.**
 
-AI Work System is an open personal AI work infrastructure that connects complete tasks, research, knowledge, resources, collaboration and delivered artifacts. Start with one project, then add search MCP tools, hybrid recall, host hooks, task windows, information collection and runtime modules as your work requires.
+Aimrail for Codex is an open extension layer built around a Codex-centered workflow. It connects complete tasks, source-based research, knowledge, resources, collaboration and delivered artifacts. Start with one project, then add search MCP tools, hybrid recall, host hooks, task windows, information collection and runtime modules as your work requires.
+
+The core runs as a file-backed Node.js CLI. Codex hooks and skills connect it to daily work; Claude and Pi adapters are also included.
 
 Its core contract is simple: **AI handles understanding and judgment; programs handle dependable storage; files retain the facts needed to continue.** The implementation connects goals to sources, tasks to execution, and artifacts to reusable knowledge.
 
@@ -82,8 +84,8 @@ These are workflows supported by the modules; users supply their own inputs. Thi
 The core requires Node.js 24+ without installing the entire external tool stack first.
 
 ```powershell
-git clone https://github.com/hdrtfhyrs/ai-work-system.git
-cd ai-work-system
+git clone https://github.com/hdrtfhyrs/aimrail-for-codex.git
+cd aimrail-for-codex
 node bin/ai-work.mjs init --workspace ./workspace --language en
 node bin/ai-work.mjs project init --workspace ./workspace --language en --name "Source Organizer" --goal "Organize material by topic and retain traceable sources"
 node bin/ai-work.mjs projects --workspace ./workspace
@@ -123,4 +125,4 @@ This release contains reusable implementations, public-path adaptations, blank c
 
 Authored code and documentation use [MIT](LICENSE), maintained under the public account [hdrtfhyrs](https://github.com/hdrtfhyrs). Third-party dependencies and official skills retain their original licenses; mixed skills publish only local additions. [Third-party notices](docs/en/third-party-notices.md)
 
-Bring your use case, relevant source and actual problem to the project: [Issues](https://github.com/hdrtfhyrs/ai-work-system/issues) · [Contribution guide](docs/en/contributing.md).
+Bring your use case, relevant source and actual problem to the project: [Issues](https://github.com/hdrtfhyrs/aimrail-for-codex/issues) · [Contribution guide](docs/en/contributing.md).
