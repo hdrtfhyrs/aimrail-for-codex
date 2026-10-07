@@ -1,5 +1,8 @@
 # 接入现有 AI 工具
 
+<!-- bilingual-navigation -->
+简体中文 · [English](en/integration.md) · [中文首页](../README.zh-CN.md)
+
 这个核心可以被任何能读本地文件、执行命令的AI工具使用。先选择一个工作区，再将工作区 `AGENTS.md` 和目标项目入口交给它；模型和外部工具由宿主提供。
 
 ## 任务开始时取得材料

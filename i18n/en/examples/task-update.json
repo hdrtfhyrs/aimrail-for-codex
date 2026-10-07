@@ -1,0 +1,16 @@
+{
+  "id": "source-organizer",
+  "name": "Organize sources by topic",
+  "create": true,
+  "changes": {
+    "goal": "Create a topic directory with a source and summary for every item. This file demonstrates task structure only.",
+    "criteria": ["[ ] Sources can be found by topic", "[ ] Every item has a traceable source"],
+    "phase": "Task defined",
+    "owner": "Current executor",
+    "done": "The complete task has been recorded",
+    "next": "Read existing sources and produce a usable topic directory",
+    "conditions": "Preserve original material; this example contains no real user data.",
+    "ledger": "无",
+    "evidence": "The user's explicit assignment in the current task; this JSON is a fictional example."
+  }
+}

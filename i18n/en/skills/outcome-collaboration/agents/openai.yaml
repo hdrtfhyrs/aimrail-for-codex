@@ -1,0 +1,4 @@
+interface:
+  display_name: "Collaborate around outcomes"
+  short_description: "Continue from goal and outcome files; use clean-context subagents, coordinator oversight, and complete executor-owned results"
+  default_prompt: "Use $outcome-collaboration to arrange new task chats and clean-context subagents according to the core goal and accumulated requirements. Continue from original goal and outcome files, with the responsible executor delivering the complete result."

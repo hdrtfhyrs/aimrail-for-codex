@@ -1,97 +1,135 @@
+<p align="center"><img src="assets/hero.svg" alt="AI Work System: persistent context, grounded research and work that can continue" width="100%" /></p>
+
+<p align="center"><b>English</b> · <a href="README.zh-CN.md">简体中文</a> · <a href="docs/en/quickstart.md">Quickstart</a> · <a href="docs/en/architecture.md">Architecture</a> · <a href="docs/en/search-plugins.md">Search plugins</a></p>
+
 # AI Work System
 
-把长期目标、当前任务、知识与经验保存为可读文件，让 AI 换聊天、换执行者后仍有依据继续工作。
+**Persistent goals. Traceable research. Work another executor can continue.**
 
-AI Work System is a personal AI work system with file-backed goals, project continuity, knowledge recall, reusable experience, search tools, skills and host integrations. It publishes reusable source and instructions; users supply their own accounts, data and AI hosts.
+AI Work System is an open personal AI work infrastructure that connects complete tasks, research, knowledge, resources, collaboration and delivered artifacts. Start with one project, then add search MCP tools, hybrid recall, host hooks, task windows, information collection and runtime modules as your work requires.
 
-## 整体怎样工作
+Its core contract is simple: **AI handles understanding and judgment; programs handle dependable storage; files retain the facts needed to continue.** The implementation connects goals to sources, tasks to execution, and artifacts to reusable knowledge.
 
-这个项目来自长期使用 AI 处理实际事务时遇到的问题：补充被当成新目标，项目换聊天后丢失进度，经验保存了却没有被采用，做过的成果又被重复创建。核心思路是让有效目标、条件、知识和成果独立于某个聊天保存，再由当前 AI 联系本轮交办判断怎样继续。
+[MIT](LICENSE) · Node.js 24+ · Node / Python / PowerShell · Files and SQLite · CLI / MCP / Host integrations
+
+## Why this exists
+
+Real work spans conversations, sources, models and executors. A user refines their intent. New evidence changes the plan. A saved lesson stops applying. When these changes live only in a chat history, the next session must reconstruct the work through repeated explanations and corrections.
+
+This system stores the long-term objective, current complete task, applicable conditions, sources, actual progress and artifacts separately. The active AI reads these records alongside the new request. Executors can change while the work remains accessible. Research also informs task understanding: broaden what you know before choosing an approach.
+
+## Capabilities
+
+| Capability | Implemented mechanisms | Read the source |
+|---|---|---|
+| **Evolving intent and project continuity** | Separate project objectives and active branches; goals and criteria independent of progress; explicit session binding, context reconciliation and file handoffs | [Project context](src/project-context.mjs), [state](src/shared-state.mjs), [context management](modules/system/任务协作/context-manager/) |
+| **Multi-source research** | Chinese and English search engines; GitHub/npm/MCP discovery; durable candidates, pagination, segmented source reading, link expansion and coverage status | [Search implementation](plugins/search-tools/), [source adapters](modules/search-integrations/) |
+| **Knowledge and experience recall** | SQLite FTS5 trigram; optional Ollama embeddings; RRF fusion; source references, on-demand expansion, retirement and recovery | [Full-system recall](integrations/context/recall.mjs), [knowledge lifecycle](src/knowledge-lifecycle.mjs) |
+| **Object and resource knowledge** | Categories, responsibilities, conditions, evidence and observed state; account entitlements recorded separately from actual capabilities | [Object knowledge](modules/system/资料中心/object-knowledge/), [resource registry](modules/system/资料中心/registry.mjs) |
+| **Collaboration and recoverable execution** | Task windows, ownership and handoffs; locked updates; event deduplication, executor leases, checkpoints, retries and capability waiting | [Collaboration](modules/system/任务协作/), [event dispatch](modules/system/运行中心/event-dispatch.mjs) |
+| **Information pipelines and artifact presentation** | Source collection, analysis queues and cloud-batch continuation; artifact registration, full-text/web presentation and explicit storage archiving | [Information center](modules/system/信息中心/), [artifact showcase](modules/system/成果展厅/), [storage](modules/system/存储接入/) |
+
+## From a request to a continuing body of work
 
 ```mermaid
 flowchart TD
-    U[用户的目标、补充与纠正] --> A[AI结合项目理解当前要做的事]
-    A --> R[按未知与卡点研究可行办法]
-    R --> E[执行并交付实际成果]
-    E --> F[用户使用、判断与反馈]
-    F -->|补充或纠正| A
-    S[项目核心、状态、知识、经验与成果原件] -->|读取目标、条件和依据| A
-    R -->|保存新认识与适用条件| S
-    E -->|更新进度和成果| S
+  U[User goals, additions and corrections] --> C[Build the current task from project records]
+  C --> R[Discover sources, read originals, refine the approach]
+  R --> X[Use tools or executors to complete the work]
+  X --> A[Save artifacts, progress and continuation notes]
+  A --> F[Use the result and provide feedback]
+  F -->|Revise goals, conditions or approach| C
+  S[(Projects · Knowledge · Experience · Objects · Resources)] -->|Read current evidence| C
+  R -->|Save evidence and new understanding| S
+  A -->|Register results and applicable lessons| S
 ```
 
-代码负责确定性的存取、检索、版本更新与交接材料生成。理解含义、选择路线、调查外部材料及执行具体业务，由接入的 AI 和工具完成。目录、召回结果和状态声明都提供依据，实际效果仍取决于怎样采用它们。
+The host supplies models and tools. Skills guide research and execution. Hooks obtain relevant records at host events. State modules preserve concurrent updates and actual artifacts. Follow references when deeper context is needed, instead of placing the entire history into every prompt.
 
-## 本版提供什么
+## The mechanisms behind the simple contract
 
-| 核心能力 | 对应实现 |
+### Task state: progress does not overwrite the objective
+
+Markdown is the task record, and a stable branch ID identifies the work. A state update acquires a file lock, rereads the current version, merges only the supplied fields, and saves through a temporary file and atomic replacement. Goals, criteria, conditions, completed work and next actions have distinct fields. Archived branches remain readable by their original IDs.
+
+This lets “where the work is now” change independently of “what the work must accomplish,” with explicit records for session changes, context compaction and executor handoffs. [State implementation](src/shared-state.mjs) · [Continuity mechanisms](docs/en/integration.md)
+
+### Research: a discovered lead can be followed to its source
+
+Search stores the candidates actually returned by providers and their pagination progress. Display budgets limit the returned window; later calls can continue reading. Source extraction preserves the final URL, date provenance, coverage and fetch status. Forum originals, replies, video descriptions, comments and subtitles have separate reading paths. Restricted or dynamic sources can produce host-reading requests and accept the source text the host actually retrieved.
+
+The tools and research skill support discovery, initial interpretation, deeper reading, revised understanding and continued execution. The model chooses the queries and decides how to use the evidence. [Search guide](docs/en/search-plugins.md) · [English research skill](i18n/en/skills/evidence-research/SKILL.md)
+
+### Recall: lexical ranking, semantic candidates and original records
+
+FTS5 trigram supplies local lexical search, with optional embeddings for semantic candidates. Reciprocal Rank Fusion combines the two rankings. The implementation uses `k = 60`:
+
+$$\operatorname{RRF}(d)=\sum_{i}\frac{1}{60+\operatorname{rank}_{i}(d)}$$
+
+Results retain source references, locations and further-reading entry points. Similarity helps locate material; the active AI still checks whether its conditions apply. Invalid knowledge can be retired while its recovery material is retained. [Full-system recall](integrations/context/recall.mjs) · [Files and indexes](docs/en/architecture.md)
+
+### Execution: state is more specific than “running”
+
+Event dispatch uses a persistent queue and stable event keys. Executors acquire expiring leases. Result writes validate the lease, preventing an expired executor from overwriting a newer result. Failures enter retry, capability-waiting or terminal states; checkpoints and artifact references travel with the job. Handoffs carry the complete objective, conditions, evidence and outstanding work.
+
+The reusable implementation provides these mechanisms; the user configures the models, accounts and continuing runtime. [Dispatch implementation](modules/system/运行中心/event-dispatch.mjs) · [Task handoffs](modules/system/任务协作/handoff-files.mjs)
+
+## Workflows you can build
+
+| Workflow | How the pieces connect |
 |---|---|
-| 保存长期目的，按明确项目与分支接续 | `src/project-context.mjs`、`src/project-registry.mjs` |
-| 目标和完成标准独立于进度更新，锁内合并并保留归档 | `src/shared-state.mjs` |
-| 中文 Markdown 知识检索、完整卡读取与续读 | `src/knowledge.mjs` |
-| SQLite FTS5 召回，可选本地向量及 RRF 融合 | `src/recall.mjs` |
-| 经验记录、无效知识退役与恢复 | `src/knowledge-record.mjs`、`src/knowledge-lifecycle.mjs` |
-| 保存对象类别、职责、条件及资源声明 | `src/object-access.mjs`、`src/resources.mjs` |
-| 成果登记与生成接手材料 | `src/deliverables.mjs`、`handoff` 命令 |
-| 多来源搜索发现、候选保存、原文与来源扩展 | `plugins/search-tools/`、`plugins/baidu-search-mcp/` |
-| 社区文档、B站材料与网页读取工具 | `plugins/community-tools/`、`modules/search-integrations/` |
-| 研究、知识复用、写作与协作方法 | `skills/` |
-| 上下文注入、任务窗口、宿主角色及接续模板 | `integrations/` |
-| 信息收集、对象资料、协作、运行、存储与成果展示 | `modules/system/` |
+| Cross-session development and long projects | Save the project objective and branch conditions → read current context → execute → save artifacts and the next action → hand off to the next executor |
+| Technical investigation and source research | Discover multiple sources → read key originals and failure conditions → form a sourced conclusion → retain the sources and applicable lessons |
+| Personal knowledge and learning | Organize knowledge and object relationships → recall existing understanding → fill gaps in the current task → connect new understanding to its records and artifacts |
+| Multiple executors | Assign independently deliverable work → specify ownership and dependencies → return original files and artifacts → integrate and finish |
+| Information collection and runtime support | Configure sources and execution capabilities → retain batches and queues → process increments for the task → register and present useful results |
 
-状态、上下文、知识检索、经验与成果模块从作者现用代码中提取并改为通用路径；工作区、对象/资源与命令入口为公开版适配。具体说明见 [代码来源与范围](docs/source-and-scope.md)。
+These are workflows supported by the modules; users supply their own inputs. This repository publishes general capabilities. Dedicated revenue-generating business implementations and private data are excluded.
 
-本仓库公开作者自有的通用系统、搜索与其他插件、技能、宿主接入源码及空白模板。账号、个人知识、私人对话、实际业务数据由使用者自己提供；小说、销售和其他赚钱业务的专属实现不在本仓库内。
+## Start with one project
 
-按用途选择入口：
-
-| 你想使用什么 | 从哪里开始 |
-|---|---|
-| 先用项目、知识和接续核心 | [快速开始](docs/quickstart.md) |
-| 单独用搜索、网页读取和社区工具 | [搜索插件](docs/search-plugins.md) |
-| 给 AI 加入研究、知识与协作方法 | [技能与宿主接入](docs/skills-and-hosts.md) |
-| 阅读和配置一般信息、运行与存储模块 | [通用系统源码](docs/general-system.md) |
-
-这些模块保留现用实现，公开副本将个人路径与数据位置改为配置。它们有各自的依赖和入口，接入范围与实际运行条件见对应文档。
-
-独立核心适合先使用文件接续；完整系统的对象、资料与召回入口在 `integrations/context/`，连接 `modules/system/` 的完整资料库。两类资料接口的格式和初始化方法见 [技能与宿主接入](docs/skills-and-hosts.md)，按所选入口建立自己的库。
-
-## 开始使用
-
-核心命令需要 Node.js 24 或更新版本，无必装的第三方 npm 依赖；默认检索在本地进行。向量召回可选，需要使用者自己提供已运行的 Ollama 和本地 embedding 模型。搜索插件和其它模块按各自文档安装 npm/Python 依赖，并配置使用者自己的服务。
-
-下载仓库后，先创建你自己的工作区：
+The core requires Node.js 24+ without installing the entire external tool stack first.
 
 ```powershell
 git clone https://github.com/hdrtfhyrs/ai-work-system.git
 cd ai-work-system
-node bin/ai-work.mjs init --workspace ./workspace
-node bin/ai-work.mjs project init --workspace ./workspace --name "资料整理工具" --goal "做一个能按主题整理资料并保留出处的工具"
+node bin/ai-work.mjs init --workspace ./workspace --language en
+node bin/ai-work.mjs project init --workspace ./workspace --language en --name "Source Organizer" --goal "Organize material by topic and retain traceable sources"
 node bin/ai-work.mjs projects --workspace ./workspace
 ```
 
-接着，将 `workspace/AGENTS.md` 和所选项目的 `核心.md`、`共享状态.md` 告诉你正在使用的 AI。原生支持项目规则的工具可以读取该文件；其它宿主可在任务开头显式读取。
+Ask your AI to read `workspace/AGENTS.md`, the project's `核心.md` and `共享状态.md`. Then use `state update`, `context read` and `handoff` to save and obtain the task. Initialization preserves existing files. [Complete quickstart](docs/en/quickstart.md)
 
-项目开始有分支后，用 `state update` 保存完整任务，再用 `context read` 或 `handoff` 取得接续正文。完整步骤见 [快速开始](docs/quickstart.md)。
+Add further capabilities by module:
 
-如果工作区放在仓库之外，使用绝对路径，或设置 `AI_WORK_HOME`；每个入口使用同一工作区即可。初始化保留已有文件，不覆盖当前配置。代码不会安装开机/登录任务或常驻服务。
+| Entry point | Guide |
+|---|---|
+| CLI / stdio MCP search and community tools | [Search configuration and commands](docs/en/search-plugins.md) |
+| Authored skills, host events, roles and context injection | [Skills and host integration](docs/en/skills-and-hosts.md) |
+| Objects, resources, information, collaboration, runtime, storage and presentation | [System modules and configuration](docs/en/general-system.md) |
+| English skills, templates and compatible protocol names | [Language guide](docs/en/languages.md) |
 
-## 一次交办应该保留什么
+## Repository map and documentation
 
-项目核心保存最终结果。分支保存本轮完整任务、有效条件、完成标准、进度与依据。后续补充由 AI 联系这些原件理解：明确变更替换冲突内容，其余工作继续。做成的产物进入成果目录，接手者读取同一原件。
+```text
+src/                         Project, state, knowledge and file core
+plugins/                     Search MCP and community-tool wrappers
+modules/search-integrations/ GitHub, forum and Bilibili source readers
+modules/system/              Information, resources, collaboration, runtime, storage, presentation
+skills/                      Authored skills and local skill adaptations
+integrations/                Hooks, roles, hosts and continuity templates
+i18n/en/                     English skills, roles, templates and examples
+workspace/                   User-private data (ignored by Git)
+```
 
-知识、经验和错误卡同时保留适用条件、实际结果、来源和限制。检索相似只是帮助定位，采用前仍需核条件。事实、动态状态、判断和未知分别保存；新证据可以修正旧做法。
+[Design principles](docs/en/philosophy.md) · [Architecture](docs/en/architecture.md) · [Source scope](docs/en/source-and-scope.md) · [Contributing](docs/en/contributing.md)
 
-详细原则见 [工作思想](docs/philosophy.md)，存储和模块关系见 [架构](docs/architecture.md)，宿主接入见 [接入现有 AI 工具](docs/integration.md)。
+The independent core and full-system registries have their own interfaces. [Host integration](docs/en/skills-and-hosts.md) explains which entry point to initialize. Set `AI_WORK_HOME` to select the shared data root.
 
-## 当前边界
+## Release scope
 
-这是从个人使用环境整理出的通用源码公开版本。核心提供统一文件命令；搜索、技能、钩子和系统模块提供各自入口。宿主自动注入、界面操作、云端调用与持续任务需要对应宿主、使用者配置和外部服务，不因代码已经公开就自动接通。没有将整个公开副本在所有环境重新运行，长期少返工要看真实任务。
+This release contains reusable implementations, public-path adaptations, blank configuration and fictional examples. External accounts, browsers, cloud hosting and models require the user's own environment. The complete public distribution has not been rerun on every platform. English instructions retain compatible protocol keys; some runtime messages and interface text remain in Chinese.
 
-`examples/` 中的条目是结构示例，均为虚构材料，不代表实际业务结果或验证过的经验。
+Authored code and documentation use [MIT](LICENSE), maintained under the public account [hdrtfhyrs](https://github.com/hdrtfhyrs). Third-party dependencies and official skills retain their original licenses; mixed skills publish only local additions. [Third-party notices](docs/en/third-party-notices.md)
 
-## 许可与维护
-
-本仓库自有代码和文档采用 [MIT 许可证](LICENSE)。署名使用作者公开账号 [hdrtfhyrs](https://github.com/hdrtfhyrs)。第三方软件、模型、插件及外部材料保留其各自许可，来源与依赖见 [第三方声明](THIRD_PARTY_NOTICES.md)。第三方安装包、模型权重和生产数据不随源码上传。
-
-欢迎提供具体使用问题、可复现的故障信息和改进。协作方式见 [CONTRIBUTING.md](CONTRIBUTING.md)。
+Bring your use case, relevant source and actual problem to the project: [Issues](https://github.com/hdrtfhyrs/ai-work-system/issues) · [Contribution guide](docs/en/contributing.md).

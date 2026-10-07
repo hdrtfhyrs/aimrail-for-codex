@@ -1,5 +1,8 @@
 # 文件与模块怎样配合
 
+<!-- bilingual-navigation -->
+简体中文 · [English](en/architecture.md) · [中文首页](../README.zh-CN.md)
+
 所有入口从同一工作区取得原件。`AI_WORK_HOME` 或核心命令中的 `--workspace` 指定它的位置；默认位置是仓库根目录下的 `workspace/`。源码目录保留代码，工作区保存使用者的配置、数据、凭据状态和输出。
 
 ```text

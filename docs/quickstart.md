@@ -1,5 +1,8 @@
 # 快速开始
 
+<!-- bilingual-navigation -->
+简体中文 · [English](en/quickstart.md) · [中文首页](../README.zh-CN.md)
+
 使用 Node.js 24 或更新版本，在仓库根目录执行以下命令。命令不会安装常驻服务、插件或开机/登录触发。
 
 ## 创建工作区与项目

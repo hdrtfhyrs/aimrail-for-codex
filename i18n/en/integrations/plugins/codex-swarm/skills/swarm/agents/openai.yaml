@@ -1,0 +1,6 @@
+interface:
+  display_name: "Codex swarm"
+  short_description: "Coordinate Codex subagents in parallel as needed and integrate results"
+  default_prompt: "Use $codex-swarm:swarm to divide the current task into independent pieces, process them in parallel, and integrate their completed results."
+policy:
+  allow_implicit_invocation: false

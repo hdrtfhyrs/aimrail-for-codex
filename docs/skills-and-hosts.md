@@ -1,5 +1,8 @@
 # 技能、宿主适配与运行支持
 
+<!-- bilingual-navigation -->
+简体中文 · [English](en/skills-and-hosts.md) · [中文首页](../README.zh-CN.md)
+
 公开部分让宿主 AI 从同一套项目、任务与知识原件继续工作：技能说明何时研究、怎样交接和怎样表达，hook 负责把需要的材料送入当前会话，核心代码负责读写、召回和版本。宿主仍负责提供模型、工具和权限。
 
 ```mermaid

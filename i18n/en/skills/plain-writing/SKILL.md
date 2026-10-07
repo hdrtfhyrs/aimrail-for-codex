@@ -1,0 +1,45 @@
+---
+name: plain-writing
+description: Use when writing or rewriting substantive Chinese explanations, research conclusions, proposals, and delivery documents, or drawing diagrams to explain processes, responsibilities, and relationships. Read before deciding explanatory diagram nodes, connections, and layout, whether in chat, documents, or software interfaces. Handle pure code implementation, short answers without diagrams, and fiction according to their task.
+---
+
+# Explain the work clearly
+
+Read at the writing stage when producing or revising substantive document prose. For a diagram explaining processes, responsibilities, or relationships, read the diagram-organization requirements before deciding nodes, connections, and layout. Its placement in chat, a document, or a software interface, and whether it accompanies long prose, do not change this timing. The same executor may implement and explain; do not delegate separately just to use the skill. A short delivery without a diagram does not require early loading. This English mirror preserves the original Chinese-writing scope and methods; adapt wording to the reader's language while preserving the source's conditions.
+
+First understand why the reader is looking: do they want to know what happened, how it works, what to do, or how to compare and decide? Choose depth from the complete task, applicable conditions, and source material. Write directly when available material answers the question, rather than turning composition into section-by-section questions or waiting for approval.
+
+Before expanding the prose, establish the relationships and results the reader most needs to understand. For complex material, first give a diagram that explains those relationships or a directly comparable table, then show the actual product, before/after changes, or a real example. Each diagram addresses one main question; do not lift a string of nouns from the prose and put each in a box. For how something gets done, organize the main line around input, action, and output. For who is responsible, organize by responsibility and handoffs. When multiple relationships must be shown together, distinguish them through swimlanes, regions, or explicit labels; place secondary relationships in accompanying diagrams, tables, or prose.
+
+Name nodes with actions or objects the reader understands. Keep process nodes at a similar step level rather than placing owners, storage locations, and entire tasks alongside steps. A connection type must have a clear meaning: sequence, information transfer, support, and feedback cannot share one unlabeled arrow type. State what important handoffs transmit and the conditions for branches. A feedback loop specifies which result changes which upstream step. Layout follows reading order and display width; make the main line's start, direction, and result visible. Choose horizontal, vertical, or another arrangement according to relationships, without shrinking text or making a long chain merely to fit all content. Group extensive material by actual relationships. Do not shrink a long document into a picture or treat disconnected boxes as an overall explanation. Explain simple questions directly without adding diagram work.
+
+Clarify actual relationships before choosing the drawing method: what input or event begins it, how it reaches the next step, what it waits for, and which result returns the loop to which step. For processes with sustained states, distinguish conditions for entering, maintaining, and leaving the state. Place consultations, reminders, and other events during the state within it or in relevant prose; for separate branches, label the trigger and destination. Generate nodes and arrows from these relationships so the reader can follow how the work reaches completion.
+
+For ordinary static process and relationship diagrams, prefer simple boxes, arrows, and necessary conditions directly expressed in Markdown with Mermaid. Default to a simplified style, avoiding decorative cards, cartoon graphics, and extra display pages. Choose another form when interaction, animation, spatial demonstration, or an explicitly requested webpage requires it. The user's specified style takes priority.
+
+Open by directly answering what the reader wants to see. When the user asks for a work, original draft, revision, or runtime effect, show actual content first, then explain judgment. If they request the complete original, show it verbatim in full, preserving repetition, errors, and context. Excerpts, summaries, and file links cannot replace it. For revision comparisons, identify the sources of original and revised drafts separately. Actual content and user judgment decide improvement; a model being called “strong” does not establish that its rewrite is beneficial.
+
+When explaining results and their meaning, keep failures, incomplete parts, and scope boundaries affecting understanding or next actions visible in the body. Truthfully distinguish a single experiment, a candidate, saved configuration, actual execution, and lasting effectiveness.
+
+Advance the whole document around the reader's same question. Each paragraph builds on preceding information with necessary causes, examples, results, or next actions. Write connected actual prose beneath headings, rather than splitting the article into a series of summaries and points. Explain who did what, why, and with what result. Keep useful connective words, and do not remove subjects, conditions, or causality for shorter sentences. “First, second” cannot force unrelated paragraphs together.
+
+Start with actions and results the reader understands, adding terms when needed for operation, lookup, or precise distinctions. Explain a necessary term through a concrete example from the current task and what it does here, rather than replacing it with another specialist definition. For example, “model wiring is incomplete” can become “the model is not connected to the writing button yet, so pressing it cannot automatically generate text.” Use one name consistently for each concept. Do not invent details to bridge factual gaps. Include names, numbers, and parameters only when they help understanding or use.
+
+Choose presentation by information relationships:
+
+| What the reader needs to understand | Preferred presentation |
+| --- | --- |
+| How something reaches completion | Process diagram with input, actions, and output |
+| Who owns what and how parts relate | Structural or relationship diagram with labeled connections |
+| Differences among approaches | Comparison table using the same dimensions, or same-location before/after images |
+| Quantities, proportions, and trends | Charts with units and sources |
+| What software, an image, or an article actually achieves | Actual screenshots, running effects, or continuous original prose |
+| Why an approach is used and when it applies | Connected paragraphs, with concrete examples as needed |
+
+Do not repeat every relationship already explained by a chart. Add causes, meaning, and usage in the prose. Headings locate real questions; steps express ordered operations. Long prose may fully develop the subject. Set no fixed sections, length, sentence length, or banned-word score. The user's format, original template, and author's voice take priority. For sustained states, mixed relationships, or feedback loops, read [Diagram/prose organization and rewrite examples](references/visual-reading.md) as needed. Use Mermaid directly for simple static node-and-link diagrams; use current `task-visualize` for interaction or other visualization implementation, and appropriate format tools for exported diagrams/documents.
+
+In rewriting, preserve original facts, roles, conditions, uncertainty, important failures, and next steps. Put originals and actual results needed for judgment in the body. Commands, parameters, internal interfaces, and trace details may move to a clearly linked technical appendix, but key limits remain in the body. Mark unknowns when material is missing; do not invent facts for fluency.
+
+After writing, read continuously: can the reader first understand the whole and actual result, then follow the prose to causes, limits, and use? Check conclusion-changing facts against originals. Directly show real diagrams/charts and enough continuous prose for judgment, opening the full document when long. For revisions, provide a before/after comparison from the same location. Paths and completion reports cannot replace the work. The user judges readability by reading the result; the writer owns technical facts. Do not report invented scores as proof of “easy to understand.”
+
+For Word, PDF, or another format, use appropriate generation, layout, and checking tools after prose organization is complete. Those tools implement the format; the user's original template remains binding. Read `knowledge-docs` separately for knowledge-base maintenance. This skill itself does not authorize changing a library, publishing, or sending material.

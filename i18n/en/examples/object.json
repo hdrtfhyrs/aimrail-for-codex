@@ -1,0 +1,10 @@
+{
+  "id": "local-text-index",
+  "kind": "object",
+  "name": "Local text index (example)",
+  "summary": "Turn registered texts into searchable entries to locate original material.",
+  "categories": ["category:retrieval"],
+  "claims": [{"key":"职责","value":"Locate material; do not replace applicability judgments","condition":"Read only explicitly registered workspace material"}],
+  "unknowns": ["Retrieval quality for a specific task"],
+  "sourceRefs": ["i18n/en/examples/object.json (fictional structural example)"]
+}

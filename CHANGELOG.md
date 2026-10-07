@@ -1,0 +1,23 @@
+# Changelog
+
+## 0.3.0 — English edition and refreshed project pages
+
+- Rebuilt the English and Chinese landing pages around the system's implemented capabilities, architecture, mechanisms, workflows and source entry points.
+- Added an original SVG cover, bilingual navigation and eight complete English operational guides.
+- Added English authored skills and references, local skill adaptations, host roles, handoff prompts, project templates and fictional examples.
+- Added `--language en` and `--language zh-CN` to workspace and project initialization. Existing files are preserved; protocol filenames and Markdown state fields remain compatible.
+- Added a language guide explaining retained schema names and the boundary between authored English instructions and third-party upstream skills.
+
+This edition shares the existing runtime implementation. It does not represent a full translation of every interface or runtime message.
+
+## 0.2.0 — Reusable plugins and system modules
+
+- Published search and community-tool wrappers, source adapters, authored skills, host integrations and general system modules.
+- Preserved the full-system lexical/semantic recall implementation and its source references.
+- Separated reusable code from user configuration, records, credentials and revenue-generating business implementations.
+- Retained third-party licenses and installation requirements.
+
+## 0.1.0 — File-backed project and knowledge core
+
+- Published project continuity, shared task state, knowledge recall, knowledge lifecycle, resource/object interfaces and artifact handoffs.
+- Added blank templates, fictional examples and MIT licensing for authored material.

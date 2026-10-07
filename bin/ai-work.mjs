@@ -20,7 +20,14 @@ function writeNew(file,text) {
   if(fs.existsSync(file)) return false;
   fs.writeFileSync(file,text,{flag:'wx'});return true;
 }
-function initialize() {
+function templatesDirectory(options={}) {
+  const language=options.language || 'zh-CN';
+  if(!['en','zh-CN'].includes(language)) throw Error('--language must be en or zh-CN.');
+  return {language,directory:language==='en'?path.join(home,'i18n','en','templates'):path.join(home,'templates')};
+}
+function initialize(options={}) {
+  const templates=templatesDirectory(options);
+  const rules=fs.readFileSync(path.join(templates.directory,'AGENTS.md'),'utf8');
   for(const dir of [PROJECTS_ROOT,...['knowledge','experiences','errors'].map(kind=>path.join(MEMORY_ROOT,kind)),path.join(WORKSPACE,'handoffs')]) fs.mkdirSync(dir,{recursive:true});
   const json=(name,value)=>writeNew(path.join(WORKSPACE,name),JSON.stringify(value,null,2)+'\n');
   json('projects.json',{schemaVersion:1,roots:['projects'],projects:[]});
@@ -28,25 +35,26 @@ function initialize() {
   json('knowledge-retirements.json',{schema:1,entries:[]});
   json('objects.json',{schemaVersion:1,revision:0,records:[]});
   json('resources.json',{schemaVersion:1,revision:0,accounts:[],benefits:[],resources:[],sources:[]});
-  writeNew(path.join(WORKSPACE,'AGENTS.md'),fs.readFileSync(path.join(home,'templates','AGENTS.md'),'utf8'));
-  return {workspace:WORKSPACE,existingFilesPreserved:true};
+  writeNew(path.join(WORKSPACE,'AGENTS.md'),rules);
+  return {workspace:WORKSPACE,language:templates.language,existingFilesPreserved:true};
 }
 function initializeProject(options) {
   if(!options.name || !options.goal) throw Error('project init needs --name NAME --goal GOAL.');
   if(/[\\/<>:"|?*\x00-\x1f]/.test(options.name)||/[. ]$/.test(options.name)||/^(con|prn|aux|nul|com[1-9]|lpt[1-9])(?:\.|$)/i.test(options.name)) throw Error('Invalid project name.');
   const project=path.join(PROJECTS_ROOT,options.name);
   if(fs.existsSync(project)) throw Error('Project directory already exists; read its originals before changing it.');
-  initialize();
+  const templates=templatesDirectory(options);
+  initialize(options);
   fs.mkdirSync(project,{recursive:true});
   for(const dir of ['主线','成果']) fs.mkdirSync(path.join(project,dir));
   const values={'{{PROJECT_NAME}}':options.name,'{{GOAL}}':options.goal};
   for(const name of ['核心.md','共享状态.md','项目概况.md','进展.md']) {
-    let text=fs.readFileSync(path.join(home,'templates','project',name),'utf8');
+    let text=fs.readFileSync(path.join(templates.directory,'project',name),'utf8');
     for(const [key,value] of Object.entries(values)) text=text.replaceAll(key,value);
     writeNew(path.join(project,name),text);
   }
-  writeNew(path.join(project,'成果','INDEX.md'),'# 成果目录\n\n此处登记实际成果、原件、限制和接续。\n');
-  return {project,goal:options.goal};
+  writeNew(path.join(project,'成果','INDEX.md'),templates.language==='en'?'# Artifacts\n\nRegister delivered artifacts, sources, limitations and continuation notes here.\n':'# 成果目录\n\n此处登记实际成果、原件、限制和接续。\n');
+  return {project,goal:options.goal,language:templates.language};
 }
 function moduleRun(name,args) {
   const child=spawnSync(process.execPath,[path.join(home,'src',name),...args],{stdio:'inherit',env:process.env,windowsHide:true});
@@ -55,8 +63,8 @@ function moduleRun(name,args) {
 }
 const help=`AI Work System — file-backed project and knowledge core
 
-node bin/ai-work.mjs init --workspace PATH
-node bin/ai-work.mjs project init --name NAME --goal GOAL --workspace PATH
+node bin/ai-work.mjs init --workspace PATH [--language en|zh-CN]
+node bin/ai-work.mjs project init --name NAME --goal GOAL --workspace PATH [--language en|zh-CN]
 node bin/ai-work.mjs projects --workspace PATH
 node bin/ai-work.mjs context read --project ABS_DIR --branch ID --workspace PATH
 node bin/ai-work.mjs context bind --host codex --session FULL_ID --project ABS_DIR --branch ID --workspace PATH
@@ -69,11 +77,11 @@ node bin/ai-work.mjs resources list --kind resources --workspace PATH
 node bin/ai-work.mjs deliverables --help --workspace PATH
 node bin/ai-work.mjs handoff --project ABS_DIR --branch ID --out FILE --workspace PATH
 
-AI_WORK_HOME can also set the workspace. No services or login/startup triggers are installed.`;
+AI_WORK_HOME can also set the workspace. Initialization defaults to zh-CN; use --language en for English instructions. Protocol filenames and state keys remain compatible. No services or login/startup triggers are installed.`;
 try {
   const [command='help',...rest]=argv;
   if(command==='help'||command==='--help') print(help);
-  else if(command==='init') { if(rest.length) throw Error('init accepts only --workspace.');print(initialize()); }
+  else if(command==='init') { const options=argumentsOf(rest);if(Object.keys(options).some(key=>key!=='language'))throw Error('init accepts --workspace and --language.');print(initialize(options)); }
   else if(command==='project') { if(rest[0]!=='init') throw Error('Use project init.');print(initializeProject(argumentsOf(rest.slice(1)))); }
   else if(command==='projects') { if(rest.length) throw Error('projects accepts only --workspace.');const {projectDirectory}=await import('../src/project-registry.mjs');print(projectDirectory()); }
   else if(command==='handoff') {

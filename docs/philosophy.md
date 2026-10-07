@@ -1,5 +1,8 @@
 # 工作思想
 
+<!-- bilingual-navigation -->
+简体中文 · [English](en/philosophy.md) · [中文首页](../README.zh-CN.md)
+
 这套框架围绕一个目的：让 AI 持续帮助用户解决真实问题，交回有用结论和可用成果，减少重复解释、纠正和操作。
 
 ## 理解是一个持续过程
