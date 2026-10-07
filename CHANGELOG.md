@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.3.4 — Project presentation and contributor entry points
+
+- Reorganized both project pages around positioning, seven capability areas, quickstart, modular setup, documentation and contribution.
+- Retired the presentation diagrams and covers; architecture guides now describe module responsibilities and source links, with detailed bilingual mechanism guides.
+- Added bilingual bug/use-case issue forms and a pull request template.
+
 ## 0.3.3 — Aimrail for Codex
 
 - Introduced a distinct public name and Codex-centered positioning across the bilingual pages, covers, CLI title and package metadata.

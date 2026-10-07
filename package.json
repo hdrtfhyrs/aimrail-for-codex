@@ -1,6 +1,6 @@
 {
   "name": "aimrail-for-codex",
-  "version": "0.3.3",
+  "version": "0.3.4",
   "description": "Aimrail for Codex: persistent projects, source-based research, knowledge recall, skills and tool integrations.",
   "type": "module",
   "license": "MIT",

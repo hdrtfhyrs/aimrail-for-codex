@@ -62,3 +62,18 @@ Deliverable registration references actual project outputs and records summaries
 The shared source materials are in `skills/` and `integrations/`; their English instruction counterparts are in [i18n/en/skills](../../i18n/en/skills/) and [i18n/en/integrations](../../i18n/en/integrations/). Skills describe working methods. Integrations contain hooks, roles, and host templates. Once explicitly registered in the host, hooks retrieve the same task and materials. The repository does not automatically write templates into your host configuration. You provide third-party host capabilities and account connections.
 
 `modules/system/` retains the source directories for general information, objects, collaboration, execution, archiving, and presentation modules. Code and user state have separate locations; see [General system source and entry points](general-system.md) for configuration. Use these modules according to the task and its dependencies. A general capability does not automatically authorize or start a specific business operation.
+
+## Module responsibilities and integration
+
+| Component | Source | Relationship to the task |
+|---|---|---|
+| Project and branch records | [Project context](../../src/project-context.mjs), [shared state](../../src/shared-state.mjs) | Preserve complete goals, conditions, progress and references; obtain the task by project and branch. |
+| Research and source reading | [Search tools](../../plugins/search-tools/), [source adapters](../../modules/search-integrations/) | Retrieve candidates and originals from model-selected queries, retaining source text, provenance and coverage. |
+| Knowledge and experience recall | [Full-system recall](../../integrations/context/recall.mjs), [knowledge lifecycle](../../src/knowledge-lifecycle.mjs) | Find applicable records while preserving source locations and further-reading entry points. |
+| Skills and host hooks | [Skills](../../skills/), [hooks](../../integrations/hooks/) | Skills guide research, collaboration and writing; hooks supply relevant records at configured host events. |
+| Objects and resources | [Object knowledge](../../modules/system/资料中心/object-knowledge/), [registry](../../modules/system/资料中心/registry.mjs) | Provide responsibilities, conditions, evidence, tools and account entitlements for capability decisions. |
+| Collaboration and handoff | [Task collaboration](../../modules/system/任务协作/) | Preserve ownership, claims and complete handoff material; return independently delivered work to its owner. |
+| Information and recoverable execution | [Information center](../../modules/system/信息中心/), [event dispatch](../../modules/system/运行中心/event-dispatch.mjs) | Save source batches, analysis queues and execution state, with configured leases, checkpoints and retries. |
+| Artifacts and storage | [Showcase](../../modules/system/成果展厅/), [storage](../../modules/system/存储接入/) | Register, present and retain actual outputs; storage and archive operations use their documented configuration. |
+
+The active AI chooses which records and modules apply. Source files, derived indexes and execution queues retain distinct purposes. The independent core and full-system services have different interfaces and record schemas; see [host integration](skills-and-hosts.md). [Implementation mechanisms](mechanisms.md) expands state locking, source coverage, hybrid recall and execution recovery.

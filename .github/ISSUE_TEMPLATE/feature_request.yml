@@ -1,0 +1,22 @@
+name: Use case or feature / 用途与功能建议
+description: Describe a real use case and the result you need.
+title: "[Feature] "
+body:
+  - type: textarea
+    id: use_case
+    attributes:
+      label: Use case / 实际用途
+      description: What work are you trying to complete?
+    validations:
+      required: true
+  - type: textarea
+    id: result
+    attributes:
+      label: Desired result / 希望得到的结果
+    validations:
+      required: true
+  - type: textarea
+    id: context
+    attributes:
+      label: Relevant module or references / 相关模块与资料
+      description: Existing entry points, sources, examples, or alternatives.

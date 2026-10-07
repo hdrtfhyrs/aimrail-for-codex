@@ -1,128 +1,111 @@
-<p align="center"><img src="assets/hero.svg" alt="Aimrail for Codex: persistent context, grounded research and work that can continue" width="100%" /></p>
-
-<p align="center"><b>English</b> · <a href="README.zh-CN.md">简体中文</a> · <a href="docs/en/quickstart.md">Quickstart</a> · <a href="docs/en/architecture.md">Architecture</a> · <a href="docs/en/search-plugins.md">Search plugins</a></p>
-
 # Aimrail for Codex
 
-**A project, research and tool layer for Codex. Work that can continue.**
+**Persistent projects, grounded research and coordinated execution for Codex.**
 
-Aimrail for Codex is an open extension layer built around a Codex-centered workflow. It connects complete tasks, source-based research, knowledge, resources, collaboration and delivered artifacts. Start with one project, then add search MCP tools, hybrid recall, host hooks, task windows, information collection and runtime modules as your work requires.
+Aimrail extends Codex with project continuity, source-based research, knowledge recall, skills and reusable tool integrations. Goals, evidence and deliverables stay in readable files, so work can continue across conversations, context compaction and executor handoffs.
 
-The core runs as a file-backed Node.js CLI. Codex hooks and skills connect it to daily work; Claude and Pi adapters are also included.
+Codex supplies the model and tools. Aimrail supplies the task records, research methods, shared knowledge and integration points. The core is a Node.js CLI; the repository also includes Claude and Pi adapters.
 
-Its core contract is simple: **AI handles understanding and judgment; programs handle dependable storage; files retain the facts needed to continue.** The implementation connects goals to sources, tasks to execution, and artifacts to reusable knowledge.
+**English** · [简体中文](README.zh-CN.md)
 
-[MIT](LICENSE) · Node.js 24+ · Node / Python / PowerShell · Files and SQLite · CLI / MCP / Host integrations
+[Quickstart](docs/en/quickstart.md) · [Search & MCP](docs/en/search-plugins.md) · [Host integration](docs/en/skills-and-hosts.md) · [Documentation](#documentation)
 
-## Why this exists
+[MIT](LICENSE) · Node.js 24+ · [Releases](https://github.com/hdrtfhyrs/aimrail-for-codex/releases) · [Issues](https://github.com/hdrtfhyrs/aimrail-for-codex/issues)
 
-Real work spans conversations, sources, models and executors. A user refines their intent. New evidence changes the plan. A saved lesson stops applying. When these changes live only in a chat history, the next session must reconstruct the work through repeated explanations and corrections.
+## Why Aimrail
 
-This system stores the long-term objective, current complete task, applicable conditions, sources, actual progress and artifacts separately. The active AI reads these records alongside the new request. Executors can change while the work remains accessible. Research also informs task understanding: broaden what you know before choosing an approach.
+Long-running work needs more than a conversation history. The objective changes, sources accumulate, decisions need context, and another session may need to finish what was started.
+
+Aimrail keeps the project objective, complete current task, applicable conditions, progress and artifacts as distinct records. The AI reads those records alongside new instructions, researches missing information and saves the result for the next step.
 
 ## Capabilities
 
-| Capability | Implemented mechanisms | Read the source |
-|---|---|---|
-| **Evolving intent and project continuity** | Separate project objectives and active branches; goals and criteria independent of progress; explicit session binding, context reconciliation and file handoffs | [Project context](src/project-context.mjs), [state](src/shared-state.mjs), [context management](modules/system/任务协作/context-manager/) |
-| **Multi-source research** | Chinese and English search engines; GitHub/npm/MCP discovery; durable candidates, pagination, segmented source reading, link expansion and coverage status | [Search implementation](plugins/search-tools/), [source adapters](modules/search-integrations/) |
-| **Knowledge and experience recall** | SQLite FTS5 trigram; optional Ollama embeddings; RRF fusion; source references, on-demand expansion, retirement and recovery | [Full-system recall](integrations/context/recall.mjs), [knowledge lifecycle](src/knowledge-lifecycle.mjs) |
-| **Object and resource knowledge** | Categories, responsibilities, conditions, evidence and observed state; account entitlements recorded separately from actual capabilities | [Object knowledge](modules/system/资料中心/object-knowledge/), [resource registry](modules/system/资料中心/registry.mjs) |
-| **Collaboration and recoverable execution** | Task windows, ownership and handoffs; locked updates; event deduplication, executor leases, checkpoints, retries and capability waiting | [Collaboration](modules/system/任务协作/), [event dispatch](modules/system/运行中心/event-dispatch.mjs) |
-| **Information pipelines and artifact presentation** | Source collection, analysis queues and cloud-batch continuation; artifact registration, full-text/web presentation and explicit storage archiving | [Information center](modules/system/信息中心/), [artifact showcase](modules/system/成果展厅/), [storage](modules/system/存储接入/) |
-
-## From a request to a continuing body of work
-
-![How the work continues](assets/architecture-en.svg)
-
-The host supplies models and tools. Skills guide research and execution. Hooks obtain relevant records at host events. State modules preserve concurrent updates and actual artifacts. Follow references when deeper context is needed, instead of placing the entire history into every prompt.
-
-## The mechanisms behind the simple contract
-
-### Task state: progress does not overwrite the objective
-
-Markdown is the task record, and a stable branch ID identifies the work. A state update acquires a file lock, rereads the current version, merges only the supplied fields, and saves through a temporary file and atomic replacement. Goals, criteria, conditions, completed work and next actions have distinct fields. Archived branches remain readable by their original IDs.
-
-This lets “where the work is now” change independently of “what the work must accomplish,” with explicit records for session changes, context compaction and executor handoffs. [State implementation](src/shared-state.mjs) · [Continuity mechanisms](docs/en/integration.md)
-
-### Research: a discovered lead can be followed to its source
-
-Search stores the candidates actually returned by providers and their pagination progress. Display budgets limit the returned window; later calls can continue reading. Source extraction preserves the final URL, date provenance, coverage and fetch status. Forum originals, replies, video descriptions, comments and subtitles have separate reading paths. Restricted or dynamic sources can produce host-reading requests and accept the source text the host actually retrieved.
-
-The tools and research skill support discovery, initial interpretation, deeper reading, revised understanding and continued execution. The model chooses the queries and decides how to use the evidence. [Search guide](docs/en/search-plugins.md) · [English research skill](i18n/en/skills/evidence-research/SKILL.md)
-
-### Recall: lexical ranking, semantic candidates and original records
-
-FTS5 trigram supplies local lexical search, with optional embeddings for semantic candidates. Reciprocal Rank Fusion combines the two rankings. The implementation uses `k = 60`:
-
-```text
-RRF(d) = Σᵢ 1 / (60 + rankᵢ(d))
-```
-
-Results retain source references, locations and further-reading entry points. Similarity helps locate material; the active AI still checks whether its conditions apply. Invalid knowledge can be retired while its recovery material is retained. [Full-system recall](integrations/context/recall.mjs) · [Files and indexes](docs/en/architecture.md)
-
-### Execution: state is more specific than “running”
-
-Event dispatch uses a persistent queue and stable event keys. Executors acquire expiring leases. Result writes validate the lease, preventing an expired executor from overwriting a newer result. Failures enter retry, capability-waiting or terminal states; checkpoints and artifact references travel with the job. Handoffs carry the complete objective, conditions, evidence and outstanding work.
-
-The reusable implementation provides these mechanisms; the user configures the models, accounts and continuing runtime. [Dispatch implementation](modules/system/运行中心/event-dispatch.mjs) · [Task handoffs](modules/system/任务协作/handoff-files.mjs)
-
-## Workflows you can build
-
-| Workflow | How the pieces connect |
+| Capability | What it adds |
 |---|---|
-| Cross-session development and long projects | Save the project objective and branch conditions → read current context → execute → save artifacts and the next action → hand off to the next executor |
-| Technical investigation and source research | Discover multiple sources → read key originals and failure conditions → form a sourced conclusion → retain the sources and applicable lessons |
-| Personal knowledge and learning | Organize knowledge and object relationships → recall existing understanding → fill gaps in the current task → connect new understanding to its records and artifacts |
-| Multiple executors | Assign independently deliverable work → specify ownership and dependencies → return original files and artifacts → integrate and finish |
-| Information collection and runtime support | Configure sources and execution capabilities → retain batches and queues → process increments for the task → register and present useful results |
+| **Project continuity** | Project and branch records, explicit session binding, context reconciliation and handoff files. Goals and criteria remain separate from progress. |
+| **Source-based research** | Chinese and English search, GitHub/npm/MCP discovery, durable candidates, pagination, original-source reading and link expansion. |
+| **Knowledge and experience recall** | Local full-text search, optional semantic retrieval, combined ranking, original-source references and recoverable knowledge retirement. |
+| **Objects and resources** | Record responsibilities, conditions, sources, tools and account entitlements, with observed capability separate from declared availability. |
+| **Collaboration and execution** | Task windows, ownership, handoffs, locked state updates, event queues, executor leases, checkpoints and retries. |
+| **Information pipelines** | Source collection, analysis queues, cloud-batch reception and saved continuation records. |
+| **Artifacts and storage** | Deliverable registration, full-text/web presentation, storage adapters, snapshots and scoped archiving. |
 
-These are workflows supported by the modules; users supply their own inputs. This repository publishes general capabilities. Dedicated revenue-generating business implementations and private data are excluded.
+The [implementation guide](docs/en/mechanisms.md) explains state locking, source coverage, hybrid recall and execution recovery with links to the code.
 
-## Start with one project
+## Quickstart
 
-The core requires Node.js 24+ without installing the entire external tool stack first.
+The file-backed core requires **Node.js 24 or later**. Run from the repository root:
 
 ```powershell
 git clone https://github.com/hdrtfhyrs/aimrail-for-codex.git
 cd aimrail-for-codex
+
 node bin/ai-work.mjs init --workspace ./workspace --language en
 node bin/ai-work.mjs project init --workspace ./workspace --language en --name "Source Organizer" --goal "Organize material by topic and retain traceable sources"
 node bin/ai-work.mjs projects --workspace ./workspace
 ```
 
-Ask your AI to read `workspace/AGENTS.md`, the project's `核心.md` and `共享状态.md`. Then use `state update`, `context read` and `handoff` to save and obtain the task. Initialization preserves existing files. [Complete quickstart](docs/en/quickstart.md)
+This creates a workspace and project records. Ask Codex to read `workspace/AGENTS.md` and the project's goal and task files. Follow the [complete quickstart](docs/en/quickstart.md) to update task state, recall knowledge and produce a handoff.
 
-Add further capabilities by module:
+Use `--language zh-CN` for Chinese instructions. Both editions share the same runtime and persisted protocols.
 
-| Entry point | Guide |
+## Add capabilities
+
+Start with the core, then configure the modules needed for your work.
+
+| Component | Source | Setup |
+|---|---|---|
+| Project, state and knowledge core | [src](src/) · [CLI](bin/ai-work.mjs) | [Quickstart](docs/en/quickstart.md) |
+| Search MCP and community-tool wrappers | [plugins](plugins/) · [source readers](modules/search-integrations/) | [Search configuration](docs/en/search-plugins.md) |
+| Skills, hooks, roles and host adapters | [skills](skills/) · [integrations](integrations/) | [Host integration](docs/en/skills-and-hosts.md) |
+| Information, collaboration and runtime modules | [modules/system](modules/system/) | [System configuration](docs/en/general-system.md) |
+| English skills and task templates | [i18n/en](i18n/en/) | [Language guide](docs/en/languages.md) |
+
+Models, external services, browser access and continuing runtime use the environment you configure. Each guide describes its dependencies and entry points.
+
+## Documentation
+
+| Guide | Contents |
 |---|---|
-| CLI / stdio MCP search and community tools | [Search configuration and commands](docs/en/search-plugins.md) |
-| Authored skills, host events, roles and context injection | [Skills and host integration](docs/en/skills-and-hosts.md) |
-| Objects, resources, information, collaboration, runtime, storage and presentation | [System modules and configuration](docs/en/general-system.md) |
-| English skills, templates and compatible protocol names | [Language guide](docs/en/languages.md) |
+| [Quickstart](docs/en/quickstart.md) | Initialize a project, update a task, recall records and hand off work |
+| [Search and MCP](docs/en/search-plugins.md) | Search providers, community tools, source reading and MCP configuration |
+| [Skills and host integration](docs/en/skills-and-hosts.md) | Codex/Claude/Pi adapters, hooks, authored skills and role templates |
+| [System modules](docs/en/general-system.md) | Information collection, objects, collaboration, runtime, storage and presentation |
+| [Architecture](docs/en/architecture.md) | File layout, module responsibilities and integration relationships |
+| [Implementation mechanisms](docs/en/mechanisms.md) | State updates, source coverage, hybrid recall and execution recovery |
+| [Design principles](docs/en/philosophy.md) | Goals, evidence, judgment, persistence and collaboration |
+| [Languages](docs/en/languages.md) | English materials and compatible protocol names |
+| [Source and scope](docs/en/source-and-scope.md) | Public implementations, extracted modules and excluded private data |
 
-## Repository map and documentation
+## FAQ
 
-```text
-src/                         Project, state, knowledge and file core
-plugins/                     Search MCP and community-tool wrappers
-modules/search-integrations/ GitHub, forum and Bilibili source readers
-modules/system/              Information, resources, collaboration, runtime, storage, presentation
-skills/                      Authored skills and local skill adaptations
-integrations/                Hooks, roles, hosts and continuity templates
-i18n/en/                     English skills, roles, templates and examples
-workspace/                   User-private data (ignored by Git)
-```
+<details>
+<summary>How does this connect to Codex?</summary>
 
-[Design principles](docs/en/philosophy.md) · [Architecture](docs/en/architecture.md) · [Source scope](docs/en/source-and-scope.md) · [Contributing](docs/en/contributing.md)
+The project and knowledge core runs through the CLI. Authored skills describe research, collaboration and continuation methods. Host hooks read relevant project records at configured events. Register the appropriate interfaces in your host using the [integration guide](docs/en/skills-and-hosts.md).
 
-The independent core and full-system registries have their own interfaces. [Host integration](docs/en/skills-and-hosts.md) explains which entry point to initialize. Set `AI_WORK_HOME` to select the shared data root.
+</details>
 
-## Release scope
+<details>
+<summary>Can I use just the search plugin or another module?</summary>
 
-This release contains reusable implementations, public-path adaptations, blank configuration and fictional examples. External accounts, browsers, cloud hosting and models require the user's own environment. The complete public distribution has not been rerun on every platform. English instructions retain compatible protocol keys; some runtime messages and interface text remain in Chinese.
+Yes. Search tools, source readers, authored skills and the file-backed core have their own entry points. Choose a module from [Add capabilities](#add-capabilities) and configure its documented dependencies.
 
-Authored code and documentation use [MIT](LICENSE), maintained under the public account [hdrtfhyrs](https://github.com/hdrtfhyrs). Third-party dependencies and official skills retain their original licenses; mixed skills publish only local additions. [Third-party notices](docs/en/third-party-notices.md)
+</details>
 
-Bring your use case, relevant source and actual problem to the project: [Issues](https://github.com/hdrtfhyrs/aimrail-for-codex/issues) · [Contribution guide](docs/en/contributing.md).
+<details>
+<summary>How are English instructions and private data handled?</summary>
+
+English guides, skills and templates are included. Some persisted filenames, state keys and runtime output remain Chinese for compatibility. User-created records and configuration belong in the ignored workspace. The public repository provides blank configuration and fictional examples.
+
+</details>
+
+## Contributing
+
+Bug reports, practical use cases, documentation fixes, source adapters and host integrations are welcome. English and Chinese are both welcome. Use the [issue forms](https://github.com/hdrtfhyrs/aimrail-for-codex/issues/new/choose) or read the [contribution guide](docs/en/contributing.md) before submitting a change.
+
+See the [changelog](CHANGELOG.md) and [releases](https://github.com/hdrtfhyrs/aimrail-for-codex/releases) for published updates.
+
+## License
+
+Authored code and documentation use the [MIT License](LICENSE). Third-party dependencies and upstream skills retain their own licenses; local skill adaptations publish the author's additions. See [third-party notices](THIRD_PARTY_NOTICES.md) for the boundaries.

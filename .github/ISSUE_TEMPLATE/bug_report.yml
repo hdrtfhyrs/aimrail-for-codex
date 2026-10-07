@@ -1,0 +1,38 @@
+name: Bug report / 问题反馈
+description: Report a concrete problem with a module or documented workflow.
+title: "[Bug] "
+body:
+  - type: markdown
+    attributes:
+      value: "English and 简体中文 are welcome. Use dummy configuration values in shared examples."
+  - type: input
+    id: component
+    attributes:
+      label: Component / 组件
+      description: "For example: core CLI, search MCP, recall, hooks, or documentation."
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps or command / 操作步骤或命令
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior / 预期结果
+    validations:
+      required: true
+  - type: textarea
+    id: observed
+    attributes:
+      label: Actual result / 实际结果
+      description: Include the relevant error text or output.
+    validations:
+      required: true
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment / 环境
+      description: OS, Node.js version, repository version, and host if applicable.
